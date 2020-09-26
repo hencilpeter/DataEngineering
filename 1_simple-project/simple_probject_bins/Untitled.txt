@@ -1,0 +1,53 @@
+sqoop import --connect jdbc:mysql://localhost/DRMS --username root --password test1234 --table trade --target-dir /DRMS/tradeC --delete-target-dir --fields-terminated-by ','   --m 1
+sqoop import --connect jdbc:mysql://localhost/DRMS --username root --password test1234 --table trade --target-dir /DRMS/tradeP --delete-target-dir --fields-terminated-by '|'   --m 1
+
+
+CREATE EXTERNAL TABLE IF NOT EXISTS test_trade (id INT, positionId INT, price DOUBLE,  quantity DOUBLE,  createTime timeStamp, tradeId INT,  tradeType VARCHAR(50)) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION '/DRMS/tradeC';
+
+
+CREATE EXTERNAL TABLE tradeC STORED AS TEXTFILE LOCATION '/DRMS/tradeC';
+
+
+CREATE EXTERNAL TABLE IF NOT EXISTS test_position (positionId INT, firmAccount VARCHAR(30),  securityId INT) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION '/DRMS/position';
+
+--------------
+
+
+(base) hencilpeter@Hencils-MacBook-Pro ~ % sqoop import --connect jdbc:mysql://localhost/DRMS --username root --password test1234 --table trade --columns "id, tradeId, positionId, tradeType, quantity, price" --target-dir /DRMS/trade1 --delete-target-dir --fields-terminated-by ',' --m 1
+
+
+
+CREATE EXTERNAL TABLE IF NOT EXISTS temp_trade1 (id INT, tradeId INT, positionId INT,  tradeType VARCHAR(50)) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION '/DRMS/trade1;
+
+
+
+
+---
+
+1. trade table 
+   1.1 sqoop import 
+        >sqoop import --connect jdbc:mysql://localhost/DRMS --username root --password test1234 --table trade --columns "id, tradeId, positionId, tradeType, price, quantity, timeStamp" --target-dir /DRMS/trade --delete-target-dir --fields-terminated-by ',' --m 1 
+    1.2 Hive create 
+        >CREATE EXTERNAL TABLE IF NOT EXISTS trade(id INT, tradeId INT, positionId INT, tradeType VARCHAR(50), price DOUBLE, quantity DOUBLE, createTime timeStamp)ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION '/DRMS/trade';
+2. position table 
+   2.1 sqoop import 
+     sqoop import --connect jdbc:mysql://localhost/DRMS --username root --password test1234 --table position --columns "positionId, securityId, firmAccount" --target-dir /DRMS/position --m 1
+   2.2 Hive create
+     CREATE EXTERNAL TABLE IF NOT EXISTS position(tradeId INT, positionId INT, firmAcount VARCHAR(50))ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION '/DRMS/position';
+
+
+
+
+set hive.cli.print.header=true;
+
+
+
+
+
+
+HDFS 
+--remove 
+hdfs dfs -rm -R '/DRMS/trade/'
+hdfs dfs -ls '/DRMS'
+hdfs dfs -ls '/DRMS/*'
+hdfs dfs -cat '/DRMS/trade/*'  

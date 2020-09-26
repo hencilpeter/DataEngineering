@@ -1,0 +1,753 @@
+2020-09-14 14:44:25,003 INFO  e.t.p.svc.TradeProcessApplication - No active profile set, falling back to default profiles: default
+2020-09-14 14:44:26,465 WARN  o.s.b.actuate.endpoint.EndpointId - Endpoint ID 'service-registry' contains invalid characters, please migrate to a valid format.
+2020-09-14 14:44:27,328 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2020-09-14 14:44:27,329 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-09-14 14:44:27,329 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-09-14 14:44:27,437 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-09-14 14:44:27,585 WARN  c.n.c.s.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-09-14 14:44:27,585 INFO  c.n.c.s.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-09-14 14:44:27,607 INFO  c.n.config.DynamicPropertyFactory - DynamicPropertyFactory is initialized with configuration sources: com.netflix.config.ConcurrentCompositeConfiguration@6399551e
+2020-09-14 14:44:27,981 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-09-14 14:44:28,566 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-09-14 14:44:28,786 INFO  o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 1000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = test
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-09-14 14:44:28,857 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-09-14 14:44:28,946 INFO  o.a.k.common.utils.AppInfoParser - Kafka version: 2.5.1
+2020-09-14 14:44:28,947 INFO  o.a.k.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2020-09-14 14:44:28,947 INFO  o.a.k.common.utils.AppInfoParser - Kafka startTimeMs: 1600065868946
+2020-09-14 14:44:28,949 INFO  o.a.k.c.consumer.KafkaConsumer - [Consumer clientId=consumer-test-1, groupId=test] Subscribed to topic(s): trade-data
+2020-09-14 14:44:28,949 INFO  e.t.p.svc.service.KafkaService - Consumer is subscribed to topic : trade-data
+2020-09-14 14:44:28,985 WARN  c.n.c.s.URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+2020-09-14 14:44:28,986 INFO  c.n.c.s.URLConfigurationSource - To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2020-09-14 14:44:29,136 WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-09-14 14:44:29,485 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.20.Final
+2020-09-14 14:44:29,845 INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-09-14 14:44:30,275 INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-09-14 14:44:31,618 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-09-14 14:44:31,851 WARN  o.s.c.l.c.BlockingLoadBalancerClientAutoConfiguration$BlockingLoadBalancerClientRibbonWarnLogger - You already have RibbonLoadBalancerClient on your classpath. It will be used by default. As Spring Cloud Ribbon is in maintenance mode. We recommend switching to BlockingLoadBalancerClient instead. In order to use it, set the value of `spring.cloud.loadbalancer.ribbon.enabled` to `false` or remove spring-cloud-starter-netflix-ribbon from your project.
+2020-09-14 14:44:32,154 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2020-09-14 14:44:32,334 INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson
+2020-09-14 14:44:32,334 INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson
+2020-09-14 14:44:32,617 INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml
+2020-09-14 14:44:32,617 INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml
+2020-09-14 14:44:33,158 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2020-09-14 14:44:33,213 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2020-09-14 14:44:33,214 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2020-09-14 14:44:33,215 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2020-09-14 14:44:33,215 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2020-09-14 14:44:33,215 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2020-09-14 14:44:33,216 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2020-09-14 14:44:33,216 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2020-09-14 14:44:33,617 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2020-09-14 14:44:33,621 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2020-09-14 14:44:33,624 INFO  c.n.d.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2020-09-14 14:44:33,629 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1600065873628 with initial instances count: 2
+2020-09-14 14:44:33,634 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1600065873634, current=UP, previous=STARTING]
+2020-09-14 14:44:33,636 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TRADE-PROCESSOR-SVC/192.168.0.103:trade-processor-svc:8083: registering service...
+2020-09-14 14:44:33,642 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2020-09-14 14:44:33,688 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_TRADE-PROCESSOR-SVC/192.168.0.103:trade-processor-svc:8083 - registration status: 204
+2020-09-14 14:44:34,172 INFO  e.t.p.svc.TradeProcessApplication - Started TradeProcessApplication in 10.749 seconds (JVM running for 11.491)
+2020-09-14 14:44:34,732 INFO  org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-test-1, groupId=test] Cluster ID: b8QCYmDyTnSv_zFOACsSwA
+2020-09-14 14:44:34,733 INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Discovered group coordinator 192.168.0.103:9092 (id: 2147483647 rack: null)
+2020-09-14 14:44:34,735 INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-test-1, groupId=test] (Re-)joining group
+2020-09-14 14:44:34,760 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Finished assignment for group at generation 14: {consumer-test-1-729292c8-8aac-48fe-97ed-fad9b1eb3fb5=Assignment(partitions=[trade-data-0])}
+2020-09-14 14:44:35,167 INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Successfully joined group with generation 14
+2020-09-14 14:44:35,171 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Adding newly assigned partitions: trade-data-0
+2020-09-14 14:44:35,183 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Setting offset for partition trade-data-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.0.103:9092 (id: 0 rack: null)], epoch=absent}}
+2020-09-14 14:44:38,173 INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Attempt to heartbeat failed since group is rebalancing
+2020-09-14 14:44:38,176 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Revoke previously assigned partitions trade-data-0
+2020-09-14 14:44:38,176 INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-test-1, groupId=test] (Re-)joining group
+2020-09-14 14:44:38,674 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Finished assignment for group at generation 15: {consumer-test-1-ae9cf0b9-f09d-454f-826d-f33bcbc66503=Assignment(partitions=[ticket-event-0]), consumer-test-1-729292c8-8aac-48fe-97ed-fad9b1eb3fb5=Assignment(partitions=[trade-data-0])}
+2020-09-14 14:44:38,677 INFO  o.a.k.c.c.i.AbstractCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Successfully joined group with generation 15
+2020-09-14 14:44:38,677 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Adding newly assigned partitions: trade-data-0
+2020-09-14 14:44:38,679 INFO  o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-test-1, groupId=test] Setting offset for partition trade-data-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[192.168.0.103:9092 (id: 0 rack: null)], epoch=absent}}
+2020-09-14 14:45:59,194 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:45:59,195 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 2 
+
+2020-09-14 14:45:59,195 INFO  e.t.p.svc.service.KafkaService - Message Key =  7ae6fbf3-68ee-4225-b7ad-e6eac9a84519
+
+2020-09-14 14:45:59,195 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":33844,"tradeType":"Exercise","quantity":575.0,"price":568.0,"timeStamp":"14-9-2020 02:45:58","security":{"id":23251,"type":"Interest Rate Swap","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":12117,"firmAccount":"EMR50"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:45:59,195 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:45:59,195 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:45:59,204 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:45:59,274 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:45:59,274 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:45:59,295 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:45:59,295 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:45:59,300 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:45:59,301 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:45:59,305 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:45:59,305 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:45:59,306 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:45:59,306 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:45:59,313 INFO  o.a.k.c.producer.ProducerConfig - ProducerConfig values: 
+	acks = -1
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 1
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2020-09-14 14:45:59,331 INFO  o.a.k.common.utils.AppInfoParser - Kafka version: 2.5.1
+2020-09-14 14:45:59,332 INFO  o.a.k.common.utils.AppInfoParser - Kafka commitId: 0efa8fb0f4c73d92
+2020-09-14 14:45:59,332 INFO  o.a.k.common.utils.AppInfoParser - Kafka startTimeMs: 1600065959331
+2020-09-14 14:45:59,336 INFO  org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: b8QCYmDyTnSv_zFOACsSwA
+2020-09-14 14:45:59,342 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:45:59,342 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:29,183 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:29,184 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 3 
+
+2020-09-14 14:46:29,184 INFO  e.t.p.svc.service.KafkaService - Message Key =  2e0b565f-df18-48b9-8771-0e1befbf7777
+
+2020-09-14 14:46:29,184 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":33669,"tradeType":"Exercise","quantity":314.0,"price":309.0,"timeStamp":"14-9-2020 02:46:29","security":{"id":25297,"type":"Exotic Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":18727,"firmAccount":"FAC"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:29,184 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:29,184 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:29,185 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:29,188 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:29,188 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:29,196 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:29,196 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:29,199 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:29,199 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:29,202 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:29,202 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:29,202 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:29,202 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:29,203 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:29,203 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:30,219 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:30,220 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 4 
+
+2020-09-14 14:46:30,220 INFO  e.t.p.svc.service.KafkaService - Message Key =  dcce8649-c076-4f8c-8960-fc33d0571561
+
+2020-09-14 14:46:30,220 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":39788,"tradeType":"UpSize","quantity":323.0,"price":667.0,"timeStamp":"14-9-2020 02:46:30","security":{"id":20576,"type":"Equity Swap","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":18758,"firmAccount":"FAC"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:30,220 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:30,220 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:30,220 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:30,223 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:30,224 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:30,226 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:30,227 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:30,230 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:30,230 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:30,233 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:30,233 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:30,233 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:30,233 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:30,234 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:30,234 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:31,249 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:31,249 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 5 
+
+2020-09-14 14:46:31,249 INFO  e.t.p.svc.service.KafkaService - Message Key =  61ddedf6-f2ea-489b-b7c6-02ffeed07f25
+
+2020-09-14 14:46:31,249 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":33252,"tradeType":"Exercise","quantity":800.0,"price":965.0,"timeStamp":"14-9-2020 02:46:31","security":{"id":29210,"type":"Option","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":13432,"firmAccount":"EMR50"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:31,249 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:31,249 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:31,249 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:31,253 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:31,253 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:31,255 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:31,255 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:31,258 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:31,258 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:31,262 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:31,262 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:31,262 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:31,262 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:31,263 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:31,263 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:32,672 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:32,672 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 6 
+
+2020-09-14 14:46:32,672 INFO  e.t.p.svc.service.KafkaService - Message Key =  d70909fd-8bfc-4881-9e58-480c7ea6126a
+
+2020-09-14 14:46:32,673 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":39514,"tradeType":"Partial Unwind","quantity":416.0,"price":1900.0,"timeStamp":"14-9-2020 02:46:32","security":{"id":25760,"type":"Exotic Option","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":11914,"firmAccount":"EMR50"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:32,673 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:32,673 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:32,673 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:32,678 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:32,678 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:32,680 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:32,681 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:32,683 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:32,684 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:32,687 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:32,687 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:32,687 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:32,687 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:32,687 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:32,687 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:33,672 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:33,672 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 7 
+
+2020-09-14 14:46:33,672 INFO  e.t.p.svc.service.KafkaService - Message Key =  a651cf98-b3b3-40ba-b123-6d9d261ffe04
+
+2020-09-14 14:46:33,672 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":37186,"tradeType":"UpSize","quantity":611.0,"price":699.0,"timeStamp":"14-9-2020 02:46:33","security":{"id":21881,"type":"Interest Rate Swap","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":10309,"firmAccount":"FAC"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:33,672 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:33,672 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:33,673 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:33,677 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:33,677 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:33,680 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:33,680 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:33,683 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:33,683 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:33,686 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:33,686 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:33,686 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:33,686 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:33,686 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:33,686 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:34,673 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:34,673 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 8 
+
+2020-09-14 14:46:34,673 INFO  e.t.p.svc.service.KafkaService - Message Key =  85f9b54e-cbc8-42a4-85d8-1e90f80eaa76
+
+2020-09-14 14:46:34,674 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":32786,"tradeType":"UpSize","quantity":109.0,"price":82.0,"timeStamp":"14-9-2020 02:46:34","security":{"id":22583,"type":"Exotic Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":16218,"firmAccount":"FAC"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:34,674 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:34,674 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:34,674 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:34,679 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:34,679 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:34,681 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:34,681 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:34,684 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:34,685 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:34,688 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:34,688 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:34,688 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:34,688 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:34,688 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:34,688 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:35,671 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:35,671 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 9 
+
+2020-09-14 14:46:35,672 INFO  e.t.p.svc.service.KafkaService - Message Key =  c98c202d-ff7f-4b3f-b394-a6b3628a35d0
+
+2020-09-14 14:46:35,672 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":34953,"tradeType":"UpSize","quantity":427.0,"price":1612.0,"timeStamp":"14-9-2020 02:46:35","security":{"id":25618,"type":"Exotic Option","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":17138,"firmAccount":"EMR50"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:35,672 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:35,672 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:35,672 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:35,676 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:35,676 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:35,679 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:35,679 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:35,681 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:35,682 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:35,685 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:35,685 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:35,685 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:35,685 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:35,685 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:35,685 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:36,669 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:36,670 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 10 
+
+2020-09-14 14:46:36,670 INFO  e.t.p.svc.service.KafkaService - Message Key =  ace74f93-1508-4656-9e43-688217afba58
+
+2020-09-14 14:46:36,670 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":34300,"tradeType":"Partial Unwind","quantity":598.0,"price":285.0,"timeStamp":"14-9-2020 02:46:36","security":{"id":24355,"type":"Interest Rate Swap","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":14796,"firmAccount":"EMR50"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:36,670 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:36,670 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:36,671 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:36,675 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:36,675 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:36,677 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:36,677 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:36,680 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:36,680 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:36,683 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:36,683 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:36,683 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:36,683 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:36,683 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:36,683 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:37,672 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:37,673 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 11 
+
+2020-09-14 14:46:37,673 INFO  e.t.p.svc.service.KafkaService - Message Key =  80285f5d-0774-42f4-b6ae-f94f0416de9a
+
+2020-09-14 14:46:37,673 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":32543,"tradeType":"Partial Unwind","quantity":632.0,"price":1044.0,"timeStamp":"14-9-2020 02:46:37","security":{"id":28532,"type":"Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":14944,"firmAccount":"FAC"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:37,673 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:37,673 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:37,673 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:37,678 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:37,678 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:37,681 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:37,681 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:37,684 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:37,685 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:37,688 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:37,688 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:37,688 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:37,688 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:37,688 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:37,688 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:38,673 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:38,673 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 12 
+
+2020-09-14 14:46:38,674 INFO  e.t.p.svc.service.KafkaService - Message Key =  622c90c1-c88e-4f8e-83e4-9610501eeb37
+
+2020-09-14 14:46:38,674 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":32254,"tradeType":"Partial Unwind","quantity":83.0,"price":1068.0,"timeStamp":"14-9-2020 02:46:38","security":{"id":21522,"type":"Equity Swap","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":14383,"firmAccount":"EMR50"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:38,674 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:38,674 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:38,674 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:38,678 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:38,678 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:38,680 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:38,680 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:38,683 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:38,684 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:38,686 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:38,686 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:38,686 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:38,686 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:38,687 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:38,687 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:39,672 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:39,672 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 13 
+
+2020-09-14 14:46:39,672 INFO  e.t.p.svc.service.KafkaService - Message Key =  1d966b0c-fd3d-4c7c-a661-2849152fa0ab
+
+2020-09-14 14:46:39,672 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":39488,"tradeType":"UpSize","quantity":420.0,"price":251.0,"timeStamp":"14-9-2020 02:46:39","security":{"id":26876,"type":"Exotic Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":16242,"firmAccount":"FAC"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:39,672 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:39,672 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:39,672 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:39,676 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:39,676 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:39,678 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:39,679 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:39,681 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:39,681 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:39,684 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:39,684 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:39,684 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:39,684 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:39,684 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:39,684 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:40,670 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:40,670 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 14 
+
+2020-09-14 14:46:40,670 INFO  e.t.p.svc.service.KafkaService - Message Key =  6252858f-1066-4e1d-903b-abb6644e9a78
+
+2020-09-14 14:46:40,670 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":39130,"tradeType":"Exercise","quantity":465.0,"price":903.0,"timeStamp":"14-9-2020 02:46:40","security":{"id":25748,"type":"Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":17256,"firmAccount":"FAC"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:40,670 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:40,670 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:40,670 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:40,674 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:40,675 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:40,677 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:40,677 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:40,679 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:40,679 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:40,682 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:40,682 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:40,682 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:40,682 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:40,682 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:40,682 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:41,672 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:41,673 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 15 
+
+2020-09-14 14:46:41,673 INFO  e.t.p.svc.service.KafkaService - Message Key =  a4000188-c695-4b43-b4ee-2f0a0b44061d
+
+2020-09-14 14:46:41,673 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":32716,"tradeType":"Partial Unwind","quantity":317.0,"price":1847.0,"timeStamp":"14-9-2020 02:46:41","security":{"id":22752,"type":"Exotic Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":19572,"firmAccount":"EMR50"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:41,673 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:41,673 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:41,674 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:41,678 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:41,678 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:41,680 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:41,680 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:41,682 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:41,682 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:41,685 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:41,685 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:41,685 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:41,685 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:41,686 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:41,686 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:42,673 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:42,674 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 16 
+
+2020-09-14 14:46:42,674 INFO  e.t.p.svc.service.KafkaService - Message Key =  5d2dea24-dba4-4670-aeeb-8c8c938894fd
+
+2020-09-14 14:46:42,674 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":32025,"tradeType":"UpSize","quantity":827.0,"price":921.0,"timeStamp":"14-9-2020 02:46:42","security":{"id":23637,"type":"Exotic Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":16121,"firmAccount":"FAC"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:42,674 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:42,674 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:42,674 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:42,678 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:42,678 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:42,680 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:42,680 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:42,683 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:42,683 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:42,685 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:42,685 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:42,685 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:42,685 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:42,685 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:42,685 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:43,671 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:43,671 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 17 
+
+2020-09-14 14:46:43,671 INFO  e.t.p.svc.service.KafkaService - Message Key =  bcf44223-85cb-45c4-9118-ced2dcc52975
+
+2020-09-14 14:46:43,671 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":37442,"tradeType":"UpSize","quantity":728.0,"price":601.0,"timeStamp":"14-9-2020 02:46:43","security":{"id":28962,"type":"Equity Swap","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":15862,"firmAccount":"EMR50"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:43,671 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:43,671 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:43,672 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:43,676 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:43,676 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:43,678 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:43,678 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:43,681 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:43,681 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:43,683 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:43,683 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:43,684 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:43,684 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:43,684 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:43,684 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:44,671 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:44,671 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 18 
+
+2020-09-14 14:46:44,671 INFO  e.t.p.svc.service.KafkaService - Message Key =  c10c3eda-52b8-46e6-8b53-988ec4246734
+
+2020-09-14 14:46:44,671 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":36977,"tradeType":"UpSize","quantity":672.0,"price":1641.0,"timeStamp":"14-9-2020 02:46:44","security":{"id":24352,"type":"Exotic Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":10073,"firmAccount":"EMR50"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:44,671 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:44,671 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:44,671 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:44,674 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:44,674 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:44,675 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:44,675 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:44,678 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:44,678 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:44,680 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:44,680 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:44,680 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:44,680 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:44,681 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:44,681 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:45,692 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:45,692 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 19 
+
+2020-09-14 14:46:45,692 INFO  e.t.p.svc.service.KafkaService - Message Key =  30e87fff-f503-46f3-9e51-4f54b1611077
+
+2020-09-14 14:46:45,692 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":31310,"tradeType":"Exercise","quantity":450.0,"price":101.0,"timeStamp":"14-9-2020 02:46:45","security":{"id":27870,"type":"Interest Rate Swap","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":16790,"firmAccount":"FAC"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:45,692 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:45,692 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:45,692 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:45,695 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:45,695 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:45,696 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:45,696 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:45,698 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:45,698 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:45,701 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:45,701 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:45,701 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:45,701 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:45,701 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:45,701 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:46,718 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:46,718 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 20 
+
+2020-09-14 14:46:46,718 INFO  e.t.p.svc.service.KafkaService - Message Key =  3403634f-551d-436a-890d-6fa104fe40f4
+
+2020-09-14 14:46:46,718 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":39097,"tradeType":"Exercise","quantity":37.0,"price":14.0,"timeStamp":"14-9-2020 02:46:46","security":{"id":26895,"type":"Equity Swap","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":19578,"firmAccount":"EMR50"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:46,718 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:46,718 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:46,719 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:46,721 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:46,721 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:46,722 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:46,722 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:46,724 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:46,724 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:46,726 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:46,726 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:46,726 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:46,726 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:46,726 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:46,726 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:47,744 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:47,744 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 21 
+
+2020-09-14 14:46:47,744 INFO  e.t.p.svc.service.KafkaService - Message Key =  0bbcf8aa-eb41-4388-8a2f-1a3df90f9e79
+
+2020-09-14 14:46:47,744 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":39302,"tradeType":"Partial Unwind","quantity":219.0,"price":1679.0,"timeStamp":"14-9-2020 02:46:47","security":{"id":21467,"type":"Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":12816,"firmAccount":"EMR50"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:47,744 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:47,744 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:47,745 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:47,747 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:47,747 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:47,748 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:47,748 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:47,750 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:47,751 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:47,753 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:47,753 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:47,753 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:47,753 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:47,753 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:47,753 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:49,172 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:49,172 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 22 
+
+2020-09-14 14:46:49,172 INFO  e.t.p.svc.service.KafkaService - Message Key =  14d9be1b-2d86-4940-8287-1f085e1a063d
+
+2020-09-14 14:46:49,172 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":38048,"tradeType":"Exercise","quantity":977.0,"price":754.0,"timeStamp":"14-9-2020 02:46:48","security":{"id":24540,"type":"Interest Rate Swap","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":16060,"firmAccount":"FAC"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:49,172 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:49,172 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:49,172 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:49,176 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:49,176 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:49,177 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:49,177 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:49,179 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:49,179 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:49,181 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:49,181 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:49,181 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:49,181 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:49,182 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:49,182 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:50,173 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:50,173 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 23 
+
+2020-09-14 14:46:50,173 INFO  e.t.p.svc.service.KafkaService - Message Key =  6f3196e1-b92a-4b62-be99-ab607ccf8ce4
+
+2020-09-14 14:46:50,173 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":33544,"tradeType":"Exercise","quantity":324.0,"price":1974.0,"timeStamp":"14-9-2020 02:46:49","security":{"id":25534,"type":"Option","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":18818,"firmAccount":"FAC"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:50,173 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:50,173 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:50,173 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:50,176 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:50,176 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:50,178 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:50,178 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:50,180 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:50,181 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:50,183 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:50,183 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:50,183 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:50,183 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:50,183 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:50,183 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:51,171 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:51,171 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 24 
+
+2020-09-14 14:46:51,171 INFO  e.t.p.svc.service.KafkaService - Message Key =  c2848cf7-bbba-459e-9c3d-691ded1fc43e
+
+2020-09-14 14:46:51,171 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":36406,"tradeType":"UpSize","quantity":636.0,"price":771.0,"timeStamp":"14-9-2020 02:46:50","security":{"id":26020,"type":"Option","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":17076,"firmAccount":"EMR50"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:51,171 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:51,171 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:51,171 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:51,175 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:51,175 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:51,177 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:51,177 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:51,179 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:51,179 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:51,181 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:51,181 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:51,181 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:51,181 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:51,182 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:51,182 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:52,173 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:52,174 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 25 
+
+2020-09-14 14:46:52,174 INFO  e.t.p.svc.service.KafkaService - Message Key =  13bb0ef2-7ef7-4539-9762-79dd2b1778f8
+
+2020-09-14 14:46:52,174 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":34029,"tradeType":"Exercise","quantity":963.0,"price":1563.0,"timeStamp":"14-9-2020 02:46:51","security":{"id":21773,"type":"Equity Swap","underlier":"JPC","validUntil":"12-12-2025"},"position":{"id":18362,"firmAccount":"FAC"},"trader":{"traderName":"Ben Panning","soeId":"soe987654"}}
+
+2020-09-14 14:46:52,174 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:52,174 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:52,174 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:52,177 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:52,177 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:52,179 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:52,179 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:52,182 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:52,182 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:52,184 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:52,184 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:52,184 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:52,184 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:52,184 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:52,184 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
+2020-09-14 14:46:53,172 INFO  e.t.p.svc.service.KafkaService - Ticket processor received new message.
+2020-09-14 14:46:53,173 INFO  e.t.p.svc.service.KafkaService - Message partition = 0, offset = 26 
+
+2020-09-14 14:46:53,173 INFO  e.t.p.svc.service.KafkaService - Message Key =  e6bc4b47-b651-4529-9e5b-453dbee76080
+
+2020-09-14 14:46:53,173 INFO  e.t.p.svc.service.KafkaService - Message value =  Message : {"tradeId":36790,"tradeType":"Exercise","quantity":25.0,"price":1257.0,"timeStamp":"14-9-2020 02:46:52","security":{"id":25428,"type":"Equity Swap","underlier":"APPLE.L","validUntil":"12-12-2025"},"position":{"id":11377,"firmAccount":"FAC"},"trader":{"traderName":"Tom Newfelder","soeId":"soe111222"}}
+
+2020-09-14 14:46:53,173 INFO  e.t.p.svc.service.KafkaService - saving trade data - start.
+2020-09-14 14:46:53,173 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:53,173 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:53,177 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trader object from JSON Object.
+2020-09-14 14:46:53,177 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:53,179 INFO  e.t.p.svc.provider.EntityProvider - Extracting Position object from JSON Object.
+2020-09-14 14:46:53,179 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:53,182 INFO  e.t.p.svc.provider.EntityProvider - Extracting Security object from JSON Object.
+2020-09-14 14:46:53,182 INFO  e.t.p.svc.provider.EntityProvider - Trader object extracted from JSON Object.
+2020-09-14 14:46:53,184 INFO  e.t.p.svc.service.KafkaService - saving trade data - end.
+2020-09-14 14:46:53,184 INFO  e.t.p.svc.provider.EntityProvider - Extracting Trade object from JSON Object.
+2020-09-14 14:46:53,184 INFO  e.t.p.svc.provider.EntityProvider - Trade object extracted from JSON Object.
+2020-09-14 14:46:53,184 INFO  e.t.p.svc.service.KafkaService - sending trade event - start.
+2020-09-14 14:46:53,184 INFO  e.t.p.svc.service.KafkaService - sending trade event - end.
+2020-09-14 14:46:53,184 INFO  e.t.p.svc.service.KafkaService - trade processed successfully.
