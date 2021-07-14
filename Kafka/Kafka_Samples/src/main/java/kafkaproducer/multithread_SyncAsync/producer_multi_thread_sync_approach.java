@@ -1,0 +1,148 @@
+/*
+ * Author : J Hencil Peter
+ * Program : multi threaded  kafka producer (synchronous approach)
+ * */
+package kafkaproducer.multithread_SyncAsync;
+
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.RecordMetadata;
+import org.codehaus.jackson.map.ObjectMapper;
+
+import java.io.File;
+import java.sql.Timestamp;
+import java.util.Properties;
+import java.util.Scanner;
+
+public class producer_multi_thread_sync_approach {
+
+    private static void printMetaData(final RecordMetadata metadata) {
+        System.out.println("Message written Topic : " + metadata.topic());
+        System.out.println("Partition : " + metadata.partition());
+        System.out.println("Offset : " + metadata.offset());
+    }
+
+    public static void main(String args[]) {
+        //String kafkaTopic = "kafka-topic-single-partition";
+        String kafkaTopic = "kafka-topic-two-partitions";
+        Properties kafkaProperties = new Properties();
+        kafkaProperties.put("bootstrap.servers", "localhost:9092,localhost:9093");
+        kafkaProperties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        kafkaProperties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+
+        Producer<String, String> producer = new KafkaProducer<String, String>(kafkaProperties);
+
+        String[] fileList = new String[2];
+        fileList[0] = "..//data//products-1.csv";
+        fileList[1] = "..//data//products-2.csv";
+
+        //dispatcher objects for each thread
+        Thread[] threadDispatchers = new Thread[fileList.length];
+        for (int count = 0; count < fileList.length; count++) {
+            threadDispatchers[count] = new Thread(new Dispatcher(producer, kafkaTopic, fileList[count]));
+            threadDispatchers[count].start();
+        }
+
+        try {
+            for (Thread thread : threadDispatchers) {
+                thread.join();
+            }
+
+        } catch (Exception exception) {
+            System.out.println("Exception raised from  main....");
+            System.out.print("Exception : " + exception);
+        } finally {
+            producer.close();
+        }
+
+    }
+
+}
+
+class Dispatcher implements Runnable {
+    private final Producer<String, String> producer;
+    private final String topicName;
+    private final String fileName;
+
+    Dispatcher(Producer<String, String> _producer, String _topicName,
+               String _fileName) {
+        producer = _producer;
+        topicName = _topicName;
+        fileName = _fileName;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Producer Starting...");
+        File fileObject = new File(fileName);
+        ObjectMapper objectMapper = new ObjectMapper();
+        long currentLineNumber = 1;
+        Timestamp timestamp;
+        try (Scanner scanner = new Scanner(fileObject)) {
+            timestamp = new Timestamp(System.currentTimeMillis());
+            System.out.println("Line #: " + currentLineNumber + "FileName : " + fileName + " timestamp : " + timestamp);
+
+
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+
+                String[] arrString = line.split(",");
+                //construct objet
+                CatalogDetail catalogDetail = new CatalogDetail(arrString[0], arrString[1], arrString[2], arrString[3],
+                        arrString[4], arrString[5], arrString[6], arrString[7], arrString[8], arrString[9],
+                        arrString[10], arrString[11], arrString[12]);
+                String jsonString = objectMapper.writeValueAsString(catalogDetail);
+
+                //send the json message to the producer
+                final ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topicName, "key-temp", jsonString);
+                RecordMetadata metadata = producer.send(producerRecord).get();
+
+                if (currentLineNumber == 10000 || currentLineNumber == 100000
+                        || currentLineNumber == 500000 || currentLineNumber == 1000000) {
+                    timestamp = new Timestamp(System.currentTimeMillis());
+                    System.out.println("Line #: " + currentLineNumber + "FileName : " + fileName + " timestamp : " + timestamp);
+
+                }
+                currentLineNumber++;
+
+            }
+        } catch (Exception exception) {
+            System.out.println("Exception in thread. exception : " + exception);
+        }
+    }
+}
+
+class CatalogDetail {
+    CatalogDetail(String _PogId, String _Supc, String _Band, String _Description,
+                  String _Size, String _Category, String _SubCategory, String _Price, String _Quantity,
+                  String _Country, String _SellerCode, String _CreationCode, String _Stock) {
+        PogId = _PogId;
+        Supc = _Supc;
+        Band = _Band;
+        Description = _Description;
+        Size = _Size;
+        Category = _Category;
+        SubCetagory = _SubCategory;
+        Price = _Price;
+        Quantity = _Quantity;
+        Country = _Country;
+        SellerCode = _SellerCode;
+        CreationCode = _CreationCode;
+        Stock = _Stock;
+    }
+
+    public String PogId;
+    public String Supc;
+    public String Band;
+    public String Description;
+    public String Size;
+    public String Category;
+    public String SubCetagory;
+    public String Price;
+    public String Quantity;
+    public String Country;
+    public String SellerCode;
+    public String CreationCode;
+    public String Stock;
+}
