@@ -1,0 +1,109 @@
+Cloudera VM 6.3.2  on Cent OS (Spark 2.4 ) CentOS 7.8
+=====================================================
+Video : https://www.youtube.com/watch?v=JUGgffGwgws
+1. Download 3 CDH installer parts 
+CDH 6.3.2 Download Url : https://bit.ly/Minus1By12Repo
+                         https://sourceforge.net/projects/getprathamos/files/
+
+2. Downlaod and isntall peazip 
+   https://peazip.github.io/peazip-64bit.html
+
+3. Install Peazip to join & extract .001 .002 & .003 files (7z)
+  CDH_6.3.2_CentOS7.7z.001 => Right Click => PeaZip => Extract here
+
+
+4.   Download VM Player :
+    http://bit.ly/GetVMPlayer
+
+	Open CentOS7.vmx in CDH_6.3.2_CentOS7 folder with VMPlayer
+5.  Play VM Player 
+
+> Open Virtual 
+Edit Virtual Machien Settings : RAM/Processor/
+
+   Play VirtualMachine 
+    (Select I copied it)
+6. BaseUser
+    password:BaseUser@123 
+	
+	and enter 
+	
+	cloudera manager  (6.3.2)
+    admin/admin 
+
+  MySQL Env 
+     mysql -uroot -pbigdata 
+
+7.  makesure ip address is configured 
+
+	  ifconfig 
+	Copy the ip address : 192.168.5.128 
+		sudo gedit /etc/hosts
+		password : BaseUser@123
+	appended the following:
+	192.168.5.128 quickstart-bigdata
+	save and close 
+
+8. modify the ip address in scm agent config 
+
+   sudo gedit /etc/cloudera-scm-agent/config.ini
+
+   chage server_host:
+   --------------------
+   server_host:  quickstart-bigdata
+
+hosts > all hosts  (it shows right ip address) 
+
+9. Restart cloudera agent and server 
+sudo systemctl restart cloudera-scm-agent 
+sudo systemctl restart cloudera-scm-server 
+
+sudo tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log
+
+<look for the message that jetty server started>
+
+Ctrl ^C 
+
+launch and login cloudera manager 
+
+10. Restart Host and Server Monitors 
+  Click Cloudera Manager Service > Instances > select Host Moniter and Service Monoitor > Actions for Selected > Restart 
+
+Also, alert publisher and event server can be stopped as these consume lot of memory. 
+
+11. redeploy and restart hdfs stale service 
+goto home > click hdfs stale services > restart stale services > redeploy and restast now 
+
+hdfs stale configuration > restart stale services > redeploy and restast now  (3-5 mins will take )
+click "Finish"
+
+"Now all services are green "
+
+
+12. additional info 
+
+  if required, add more services 
+13. run spark-shell 
+(its expected to throws permission error )
+
+> whoami 
+   the user is osboxes 
+there is no folder for osboxes 
+
+solution:
+sudo -u hdfs hadoop fs -mkdir /user/osboxes
+sudo -u hdfs hadoop fs -chown -R osboxes:osboxes /user/osboxes 
+
+hadoop fs -chown -R /user
+
+(all permissions are added )
+
+
+
+hadoop fs -ls /user 
+
+
+
+13. launch spark-shell 
+   (it will work now)
+

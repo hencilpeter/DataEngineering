@@ -1,0 +1,136 @@
+download url : 
+https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz
+
+https://www.oracle.com/java/technologies/downloads/
+
+
+jdk-8u202-linux-x64.tar.gz
+http://jdk.java.net/18/
+
+
+Setting up Spark 2.4.0 on Cludera Quick Start VM 
+===============================================
+youtube : https://www.youtube.com/watch?v=lQxlO3coMxM
+upgrading Java in CDH:
+----------------------
+https://docs.cloudera.com/documentation/enterprise/upgrade/topics/ug_jdk8.html
+Upgrading Spark in CDH:
+-----------------------
+https://docs.cloudera.com/documentation/spark2/latest/topics/spark2_installing.html
+
+Based on CDH 6.3.0
+1. Download the Cloudera Quickstart VM and import 
+  OS : Redhat Linux 
+  VM : 
+2. Launch Cloudera Express edition by launching "Cloudera Express". it will create username/password for cloudera 
+    username/password : cloudera/password 
+3. Install Java 1.8 
+  (existing version is 1.7) 
+   path : usr/java 
+  - Download java 8 : http://jdk.java.net/java-se-ri/8-MR3
+    cp openjdk-8u41-b04-linux-x64-14_jan_2020.tar.gz  ~/Downloads
+	tar xvf openjdk-8u41-b04-linux-x64-14_jan_2020.tar.gz  
+    cp -r java-se-8u41-ri/ /usr/java/java8
+    --> check version is correct   ./java --version
+
+3.Stop Coudera manager and agent   
+  "SCM" -> Cloudera Manager Server 
+  sudo service cloudera-scm-agent status 
+  sudo service cloudera-scm-agent stop 
+  sudo service cloudera-scm-server stop 
+  
+4. update bash profile 
+ vi ~/.bashrc
+ 
+add the following 
+------------------
+
+JAVA_HOME=/usr/java/java8
+export JAVA_HOME
+PATH=/usr/java/java8/bin:$PATH:$HOME/home
+export PATH
+
+apply changes 
+-------------
+. ~/bashrc 
+  
+test version now 
+----------------  
+java -version 
+
+
+5. Change java home in cloudera server 
+
+cd /etc/default
+
+vi cloudera-scm-server  
+
+add the following 
+----------------
+export JAVA_HOME=/usr/java/java8
+
+
+6. start cloudera  agent and server 
+ sudo service  cloudera-scm-server start
+ sudo service  cloudera-scm-agent start
+
+=======================================================================  [BELOW STEPS ARE NOT FULLY CORRECT]
+ https://archive.cloudera.com/p/spark2/csd/SPARK2_ON_YARN-2.4.0.cloudera2.jar
+=====
+spark 2 upgrade cloudera 
+
+ download csd file 
+ download actual spark parcel 
+ 
+ Spark 2 csd -> download jar 
+ cd ~/Downlods 
+ sudo cp Spark2_on_yarn-2.2.0.cloudera/opt/cloudera/csd 
+ change ownder to cloudera scm permission 604 
+ sudo chown Cloudera-scm:cloudera-scm Spark2_on_yarn-2....jar 
+ ls -ltr 
+ sudo chmod 644 Spark2_on_yarn-2....jar
+ 
+ 
+ cloudera manger 
+  hosts-> all hosts ->   search "java" 
+    java hoem directory : /usr/java/java8 
+	
+ goto     parcels (apps versions ) 
+ 
+ copy the parcel path (e.g )
+  uncheck "validate parcels relations"
+  save 
+  
+  click check for new parcels 
+ 
+ 
+ restart services 
+ sudo service cloudera-scm-agent restart 
+ sudo service cloudera-scm-server restart 
+ 
+ once cloudera services are up, go to parcels
+    download spark2 
+    distribute  (this will distribute to all the nodes)
+	activate 
+
+Activate and add it to cloudera cluster 
+cloudera -> down arrow -> add service -> spark 2 (check) -> continue -> check hdfs /hive -> continue 
+    select the node -> gateway server -> continue -> continue  ( it may show u some error ) 
+	  -> remove the spark to from home page 
+	  (check the start and stop option )
+	  go to parcels 
+	  download cdh 5 -> distribute -> activate 
+	  check the start and stop option 
+	  (check the start and stop option - now it should be there )
+	  delethe the old spark 
+	  add service -> select spark 2 -> select hdfs open along with hive-> 
+	  continue ->continue -> now it will spark 2 in our machine 
+	  finish 
+	  
+	  cloudera manager home and see the spark 2
+	  
+	  restart the cloudera clouster 
+	  
+	  
+	
+   	
