@@ -1,11 +1,10 @@
+/**
+  * @author Hencil Peter
+  *
+  */
+
 package writer
 
-/**
- * @author Hencil Peter
- * 
- */
-
-
 trait BaseWriter {
-  def execute(sourceFilePath: String, targetHDFSPath: String): Boolean  
+	def execute(sourceFilePath: String, targetHDFSPath: String): Boolean
 } 

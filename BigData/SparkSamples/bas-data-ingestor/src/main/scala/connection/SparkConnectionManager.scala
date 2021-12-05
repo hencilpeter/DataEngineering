@@ -1,3 +1,8 @@
+/**
+  * @author Hencil Peter
+  *
+  */
+
 package connection
 
 import org.apache.log4j.Logger
@@ -7,7 +12,7 @@ object SparkConnectionManager {
 	@transient lazy val logger = Logger.getLogger(getClass.getName)
 
 	def GetSparkSession(): SparkSession = {
-		logger.info("Function SparkSession called...")
+		//logger.info("Function SparkSession called...")
 
 		val sparkSession = SparkSession.builder().master("local[1]")
 			.appName("bas-sample-staging") // TODO: load from config

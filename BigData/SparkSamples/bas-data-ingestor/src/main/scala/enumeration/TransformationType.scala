@@ -1,3 +1,8 @@
+/**
+  * @author Hencil Peter
+  *
+  */
+
 package enumeration
 
 object TransformationType extends Enumeration {

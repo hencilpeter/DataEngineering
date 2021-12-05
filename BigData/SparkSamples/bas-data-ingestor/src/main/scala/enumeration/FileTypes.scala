@@ -1,3 +1,8 @@
+/**
+  * @author Hencil Peter
+  *
+  */
+
 package enumeration
 
 object FileTypes extends Enumeration {
