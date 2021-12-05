@@ -7,5 +7,5 @@ package transformation
 import org.apache.spark.sql.DataFrame
 
 trait TransformationRuleEngine {
-	def applyTransformation(dataframe: DataFrame): DataFrame
+	def applyTransformation(dataframe: DataFrame, fileId: Int): DataFrame
 }

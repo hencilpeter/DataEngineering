@@ -12,6 +12,7 @@ import reader.CSVReader
 
 import org.apache.hadoop.fs.{ FileSystem, Path }
 import org.apache.hadoop.conf.Configuration
+import transformation.TransformationRuleEngineImpl
 
 class CoreWriteUtilImpl extends CoreWriteUtil {
 
@@ -30,7 +31,8 @@ class CoreWriteUtilImpl extends CoreWriteUtil {
 
 			if (x.isDirectory()) {
 				//read staged  file
-				val coreData = CSVReader().execute(x.getPath.toString())
+				var coreData = CSVReader().execute(x.getPath.toString())
+				
 				
 				//core table and location 
 				val lastBackSlashIndex = x.getPath.toString().lastIndexOf("/") + 1
@@ -39,7 +41,16 @@ class CoreWriteUtilImpl extends CoreWriteUtil {
 				val coreTableLocation = DataLoadConfiguration.hdfsCoreRootPath + coreTableName;
 				val coreTableLocationNormal = DataLoadConfiguration.hdfsCoreRootPathNormal + coreTableName;
 
-				println(coreTableLocation)
+				//apply transformation  
+				
+				//get the file Id
+				val fileId = TempFileMap.fileAndId.get(stagingTableFolder)
+				
+				//apply transformation for the current file id 
+				coreData = TransformationRuleEngineImpl().applyTransformation(coreData, fileId.get)
+				//coreData.show(10)
+						
+				//println(coreTableLocation)
 
 				//write core data
 				coreData.write.partitionBy("DataGenerateDate", "DataLoadTimestamp")

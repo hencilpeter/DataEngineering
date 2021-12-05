@@ -9,6 +9,8 @@ import connection.SparkConnectionManager
 import configuration._
 import util._
 
+import org.apache.log4j.Logger
+
 object MainClassObject extends App {
 
 	/*
@@ -18,8 +20,10 @@ object MainClassObject extends App {
    * 4. Transformation  
    * 5. Core Write
    * */
-
-	Console.println("BAS Data Ingestor Started....")
+	
+ @transient lazy val logger = Logger.getLogger(getClass.getName)
+ 
+ logger.info("BAS Data Ingestor Started....")
 
 	//print data load configuration
 	DataLoadConfiguration.printDataLoadConfiguration()
