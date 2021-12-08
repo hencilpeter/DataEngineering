@@ -9,13 +9,13 @@ import org.apache.spark.sql.{ DataFrame }
 
 class TransformationRuleEngineImpl extends TransformationRuleEngine {
 
-	def applyTransformation(dataframe: DataFrame, fileId: Int): DataFrame = {
+	def applyTransformation(dataframe: DataFrame, fileId: Int, tranformationRuleExtractor: TransformationRuleExtractor): DataFrame = {
 
 		if (dataframe.isEmpty)
 			return dataframe
 
 		//get rule map for the file
-		val transformationRuleMap = TransformationRuleExtractorImpl().extractRules(fileId)
+		val transformationRuleMap = tranformationRuleExtractor.extractRules(fileId) 
 
 		if (transformationRuleMap.size == 0)
 			return dataframe
@@ -29,6 +29,7 @@ class TransformationRuleEngineImpl extends TransformationRuleEngine {
 
 		transformedDataframe
 	}
+	
 }
 
 object TransformationRuleEngineImpl {

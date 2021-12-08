@@ -72,7 +72,7 @@ class CapitalizeWordTransformationRuleImplTest extends FunSuite with BeforeAndAf
 	test("Capitalize Word Transformation Test. Dataframe with single row and each word's first letter is capitalized.") {
 		//Arrange
 		val testColumns = Seq("countryCode", "countryName", "description")
-		val testData = Seq(("SIN", "SINGAPORE", "SINGAPORE IS A SUNNY, TROPICAL ISLAND IN SOUTHEAST ASIA"))
+		val testData = Seq(("SIN", "Singapore", "Singapore Is A Sunny, Tropical Island In Southeast Asia"))
 		val testDataframe = SparkConnectionManager.GetSparkSession().createDataFrame(testData).toDF(testColumns: _*)
 
 		//Act

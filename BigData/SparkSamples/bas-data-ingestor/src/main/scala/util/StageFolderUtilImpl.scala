@@ -34,7 +34,7 @@ class StageFolderUtilImpl extends StageFolderUtil {
 			false
 
 		val writerTextFileObject = TextFileWriter()
-		Console.println("Preparing the Stage the data (Queue to Stage) ")
+		Console.println("Preparing to Stage the data (Queue to Stage) ")
 		Console.println("============================================= ")
 		//copy all the files to HDFS directory
 		fileList.foreach { file =>
@@ -47,7 +47,7 @@ class StageFolderUtilImpl extends StageFolderUtil {
 
 		Console.println("Total file copied to staging path : %d".format(fileList.length))
 		Console.println("External tables being created.")
-		Console.println("=============================")
+		//Console.println("=============================")
 		val sparkSession = SparkConnectionManager.GetSparkSession()
 
 		//create staging tables
@@ -58,7 +58,7 @@ class StageFolderUtilImpl extends StageFolderUtil {
 
 			val columnNames = df.columns.mkString(" string,") + " string"
 
-			println("columnNames" + columnNames)
+			//println("columnNames" + columnNames)
 			val fileNameWithoutExtension = fileName.getName.substring(0, fileName.getName.lastIndexOf("."))
 
 			val createExternalTableCommand = "CREATE EXTERNAL TABLE staging.%s_%s(%s) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' STORED AS TEXTFILE LOCATION '%s/%s'"
@@ -70,6 +70,8 @@ class StageFolderUtilImpl extends StageFolderUtil {
 			println("Staging table %s_%s created successfully!!!".format(fileNameWithoutExtension, targetHDFSPath.substring(targetHDFSPath.lastIndexOf("/") + 1)))
 
 		}
+		Console.println("Staging completed..... ")
+		Console.println("=============================")
 		true
 	}
 }

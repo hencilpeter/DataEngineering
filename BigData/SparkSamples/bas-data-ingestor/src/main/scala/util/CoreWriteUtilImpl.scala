@@ -12,7 +12,7 @@ import reader.CSVReader
 
 import org.apache.hadoop.fs.{ FileSystem, Path }
 import org.apache.hadoop.conf.Configuration
-import transformation.TransformationRuleEngineImpl
+import transformation.{TransformationRuleEngineImpl, TransformationRuleExtractorImpl}
 
 class CoreWriteUtilImpl extends CoreWriteUtil {
 
@@ -22,6 +22,7 @@ class CoreWriteUtilImpl extends CoreWriteUtil {
 		val hiveContext = HiveConnectionManager.getHiveContext()
 
 		val conf = new Configuration()
+		
 		conf.set("fs.defaultFS", "hdfs://quickstart-bigdata:8020")
 
 		val fs = FileSystem.get(conf)
@@ -47,7 +48,7 @@ class CoreWriteUtilImpl extends CoreWriteUtil {
 				val fileId = TempFileMap.fileAndId.get(stagingTableFolder)
 				
 				//apply transformation for the current file id 
-				coreData = TransformationRuleEngineImpl().applyTransformation(coreData, fileId.get)
+				coreData = TransformationRuleEngineImpl().applyTransformation(coreData, fileId.get, TransformationRuleExtractorImpl())
 				//coreData.show(10)
 						
 				//println(coreTableLocation)
