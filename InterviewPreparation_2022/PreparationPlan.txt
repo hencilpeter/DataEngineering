@@ -1,0 +1,40 @@
+(I) Data Engineering 
+	1. System config and Cloudera Setup
+	   1.1 System Config: 
+         4 core allocation required 
+         16GB Ram 
+         2 TB 		 
+	   1.2 Cloudera Setup 
+            Cloudera Version : CDH 6.3.2 (CentOS7) with VMware Player 	   
+			(link : https://www.youtube.com/watch?v=JUGgffGwgws
+			 Hencil Doc: Cloudera VM 6.3.2onCent OS.txt) 
+	2. Technology Stack 
+	    2.1 Scala - programming ( TO DO: yet to findout a standard book and buy a copy) 
+		    https://www.youtube.com/watch?v=pDq06gwJnLk&t=602s
+		2.2 Spark 
+		    Spark Notes : https://www.tutorialspoint.com/apache_spark/index.htm
+                          (study only theory part )
+            Samples : Hencil has given doc: CCA Assignments 20  						  
+		    first spark job on cloudera : https://www.youtube.com/watch?v=dN60fkxABZs
+            Henncil's github url : https://github.com/hencilpeter/DataEngineering/tree/master/BigData/SparkSamples
+		2.3 Hive 
+            Hive Notes : https://www.tutorialspoint.com/hive/index.htm 
+                          (Quick Notes ) 			
+		2.4 Kafka 
+		    Kafka Notes : https://www.tutorialspoint.com/apache_kafka/apache_kafka_quick_guide.htm
+            Kafka Samples : Hencil's github url will help. 		
+		2.5 Linux Commands 		
+	3. Data Ingestion Framework 
+	    3.1. Github url : https://github.com/hencilpeter/DataEngineering/tree/master/BigData/SparkSamples/bas-data-ingestor
+		3.2  Batch Load    (almost implemented ) 
+		3.3  Intraday or Realtime Load  (yet to implement. Kafka will be used) 
+	4. Interview Preparation 
+	    4.1  Data Ingestion Framework - Explanation 
+		     - basic use cases - number of sources supported with detail -  control-m job and scheduling - odd cases and troubleshooting. 
+		4.2  Cluster (bigdata) and software details. 
+		4.3  your role and responsibility 
+		4.4  Others 
+		      - log investigation 
+		
+(II) Data Science 
+     2.1 Python  
