@@ -6,7 +6,6 @@ print("type(x) = {0} : x = {1}".format(type(x),x))
 x = int("3") # z will be 3
 print("type(x) = {0} : x = {1}".format(type(x),x))
 
-
 #casting to float
 x = float(1)     # x will be 1.0
 print("type(x) = {0} : x = {1}".format(type(x),x))
