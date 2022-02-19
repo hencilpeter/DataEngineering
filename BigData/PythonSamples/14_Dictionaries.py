@@ -21,6 +21,7 @@ print('dictAddress.values() : {0}'.format(dictAddress.values()))
 
 #update value
 dictAddress['name'] = 'Dan Basset'
+dictAddress['weight'] = 50
 print('Print Values after change : {0}'.format(dictAddress.values()))
 
 #return the key value pair as list
@@ -38,7 +39,7 @@ dictAddress.update({'name':'Sanjay Ramasamy'})
 print('print values after update: {0}'.format(dictAddress.values()))
 
 #add new item
-#either use [] or update with new key
+#either use [] or update with new key ?
 
 #remove items from dictionary
 # use pop - remove items with the specified key
@@ -85,7 +86,7 @@ myfamily = {
   }
 }
 
-
+#Nested dictionaries
 child1 = {
   "name" : "Emil",
   "year" : 2004
