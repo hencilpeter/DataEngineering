@@ -72,6 +72,8 @@ functionRecursion(6)
 #simple lambda functions
 print("lambda functions....")
 function1 = lambda x: x + 10
+value = function1(2)
+
 print ("lambda x: x + 10  ==> {0}".format(function1(15)))
 
 function2 = lambda x, y: x + y
@@ -83,5 +85,5 @@ print ("lambda x, y: x + y  ==> {0}".format(function2(15,13)))
 def functionMultiply(x1):
     return lambda a : a* x1
 
-multiply = functionMultiply(10)
-print("lambda function usage : {0}".format(multiply(4)))
+lambdaMultiply = functionMultiply(10)
+print("lambda function usage : {0}".format(lambdaMultiply(4)))

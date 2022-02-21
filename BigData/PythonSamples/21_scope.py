@@ -26,11 +26,12 @@ print(x)
 
 #if we modify the same variable name, python will treat both are different variables.
 
-y = 100
+y = 150
 def myfunction():
     global y
     y = 200
     print(f"local function. y = {y}")
 
+print(f"global print1 : {y}")
 myfunction()
-print(f"global print : {y}")
+print(f"global print2 : {y}")
