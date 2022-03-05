@@ -1,0 +1,93 @@
+Ravi : 10 - 19 
+
+
+1. Variables
+2. Data types
+3. casting
+4. String
+5. Operators
+	Arithmetic Operators 
+	Assignment Operators 
+	Comparison Operators 
+	Logical Operators 
+	Identity Operators 
+	Membership Operators 
+	Bitwise Operators
+6. Lists
+7. Tuples
+8. Sets
+9. Dictionaries
+10 If Else
+11 For/While Loop
+12 Function/Lambda function
+13 Class Objects
+14 Inheritance
+15 Iterator
+16 Scope
+17 Modules
+18 Dates
+19 Math library functions 
+Hencil : 20 - 27
+20 Json
+   - prepare json from dictionary ( 3 student records ), list, tuple and normal variables  
+   - create a common function that receive the json object and print the same on the command prompt (use indent 4).
+   - implement function to change json data separator and print the same on the prompt. 
+   - Implement a function to read a json file from the disk and print the result. 
+   - Implement a function to write a json data to a file. 
+21 RegEx (regular expression)
+   Use regular expression library and do the following:
+   -  print if the given string pattern in the given string or not. 
+      i.e. pattern start/end with specific string, contains some character in the middle.    
+   -  find all the patterns in the given string. 
+   -  split the given string using the delimiter "space"
+   -  replace the specific string pattern with another string pattern. 
+   -  print the match object. i.e return object of search function.    
+22 Try…Except 
+   Write a program to use try/except (NameError, etc) /finally/else with proper example.
+    -Additionally, use raise keyword to raise own exception. 
+	              use raise keyword to raise Typeerror.
+	- open a file/print content/close the file and ensure block of code is protected by try/except/finally.
+   
+23 User Input and String formatting 
+   - use input function to read the customer’s name, age, salary and percentage of tax from the terminal.
+   - print the result in the below format:
+     ******************************************************
+	 Name       : <cus name>                      Age : <age>
+     Salary     : <2 decimal formatted value>  
+     Tax      % : <Tax>
+     Income Tax :
+     *******************************************************	 
+24 File Handling 
+     - Implement a python function to read a file  using read function with mode "rt" mode.
+	 -  print the first 25 characters of a file. 
+	 -  print the first 5 lines of a file. 
+	 -  Read the file content, change each words' first character to capital letter and write back the contend to a file. 
+	 -  Write few lines of string content using append mode. 
+	 -  write function to remove a file and directory. 
+	 /readfiles
+25. using yield, zip, broadcast to
+    - implement a function to return all the even numbers and generate the results using yield function. 
+	- merge two list (name and age ) and print each customer name and age individually
+	- create a numpy array and apply broadcast features 
+26. numpy 
+	Create a 4X2 integer array and Prints its attributes
+	Create a 5X2 integer array from a range between 100 to 200 such that the difference between each element is 10
+	Create a result array by adding the following two NumPy arrays. Next, modify the result array by calculating the square of each element
+	Return array of odd rows and even columns from below numpy array
+	Split the array into four equal-sized sub-arrays
+	Sort following NumPy array
+	Print max from axis 0 and min from axis 1 from the following 2-D
+	Delete the second column from a given array and insert the following new column in its place.
+
+27. pandas
+	 - construct a dataframe with five rows and do the below tasks stated:
+	   name, nric, age,  account balance, country 
+	(i)  print the first, middle and last 2 records 
+    (ii) find the youngest customer and print his/her nric/name, balance
+    (iii) print everyone from USA
+	(iv) find the average balance of customers from USA 
+
+28. String formatting 
+    - use string format() function and print customer name and salary using 2 decimal formatting. 
+	- use string format() using index numbers 
+    - use string format() using named index
