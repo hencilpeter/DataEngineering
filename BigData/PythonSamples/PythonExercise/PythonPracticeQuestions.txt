@@ -95,6 +95,25 @@ Hencil : 20 - 27
 
 
 
+Open items:
+(1) Multi threading 
+
+
+simple backlog
+(1) What is monkey patching?
+What is pickling and unpickling?
+Flask and Django
+Python decorators? @property
+What is dictionary comprehension?
+How would you achieve memoization in Python?
+How would you sort a dictionary in Python?
+What is a Python Docstring?
+Explain the difference between a generator and an iterator in Python.
+
+What is defaultdict in Python?
+What are Python modules?
+
+
 Python Interview Questions 
 =========================
 (1) https://www.educative.io/blog/python-interview-questions
