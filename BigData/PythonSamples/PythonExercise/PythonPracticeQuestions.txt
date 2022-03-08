@@ -91,3 +91,14 @@ Hencil : 20 - 27
     - use string format() function and print customer name and salary using 2 decimal formatting. 
 	- use string format() using index numbers 
     - use string format() using named index
+
+
+
+
+Python Interview Questions 
+=========================
+(1) https://www.educative.io/blog/python-interview-questions
+(2) https://www.edureka.co/blog/interview-questions/python-interview-questions/
+(3) https://intellipaat.com/blog/interview-question/python-interview-questions/
+(4) https://www.interviewbit.com/python-interview-questions/
+(5) https://www.javatpoint.com/python-interview-questions
