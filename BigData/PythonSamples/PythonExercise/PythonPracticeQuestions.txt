@@ -1,33 +1,205 @@
-Ravi : 10 - 19 
-
-
+Faroqe 1- 9
+=============
 1. Variables
+  - create different types of variables:
+    (i) string using single/double quotes 
+    (ii) variables are case sensitive
+  - assign many values to multiple variables 
+  - assign same values to multiple variables 
+  - apply unpacking and packing 
+  - implement a program for global keyword and modify the global variable value. 
+  - python comments (single line and multiline)
+
 2. Data types
+   - define variables with different data types like, string, int, float, complex, Boolean, byte
+   - use bytearray, to_bytes and memoryview 
+
+  Faroqe notes:
+  	In Python 3, the maximum value for an integer is 2 power 63 - 1:
+	
+	How would you express the hexadecimal value a5 as a base-16 integer constant in Python?
+		Base-16 constant should start with "0x"
+	How would you express the constant floating-point value 3.2 × 10-12 in Python:
+		3.2e-12
+	Which of the following are valid ways to specify the string literal foo'bar in Python:
+		''''
+	Write an expression for a string literal consisting of the following ASCII characters:
+
+		Horizontal Tab character
+		Newline (ASCII Linefeed) character
+		The character with hexadecimal value 7E
+
+Ans:
+
+		'\t' is the escape sequence for the Horizontal Tab character.
+
+		'\n' is the escape sequence for the Newline character.
+
+		To specify a character by hexadecimal value, use '\xhh', where hh specifies the hexadecimal digits.
+	
+		Here are a few possible correct answers:
+
+		"\t\n\x7E"
+		'\t\n\x7E'
+		'''\t\n\x7E'''
+		"""\t\n\x7E"""
+
+
+	Consider this statement:
+	Which of the following is the correct REPL output?
+	print(r'foo\\bar\nbaz')
+	Ans: foo\\bar\nbaz
+	
 3. casting
+   - casting using floor, int, str  and print the types 
 4. String
+- assign a  string value and apply the following:
+  (i) slicing from the start, from the end and middle 
+  (ii) negative indexing 
+  (iii) apply string functions like, upper(), lower(). casefold(), title
+  (iv) string concatenation using "+" 
+  (v) format string and use escape sequence "\" 
+- Logic Questions:
+	Write a program to count vowels and consonants in a string.
+	Write a program to Convert Character Matrix to single String
+	Write a Python program to decapitalize the first letter of a given string.
+
 5. Operators
-	Arithmetic Operators 
-	Assignment Operators 
-	Comparison Operators 
-	Logical Operators 
-	Identity Operators 
-	Membership Operators 
-	Bitwise Operators
+ - Arithmetic Operators 
+   %	- Modulus
+   **	- Exponentiation
+   //	- Floor division
+ - Assignment Operators 
+  %=, //=, **=, &=, |=, ^=, >>=, <<=
+ - Comparison Operators 
+  ==, >,<, !=, <=, >=
+ - Logical Operators 
+  and/or/not
+ - Identity Operators 
+   is 
+   is not    
+ - Membership Operators 
+	in 
+	not in 
+ - Bitwise Operators	
+	& 	AND						
+	|	OR						
+	 ^	XOR						
+	~ 	NOT						
+	<<	Zero fill left shift	
+	>>	Signed right shift
 6. Lists
+  - create a list with different type of values.
+  - print the list using for/while loop  as well as list comprehension feature (without if, with if, with if else )
+  - create list from tuple, list constructor and print the elements using slicing technique 
+  - check the item exist in list using "if" condition and print the result. 
+  - implement code for merging two list
+  - use different features of list:
+    (i)  re-assign the list items' value and print the length of the list 
+    (ii) insert an item to an existing list, remove the item using pop(), del item, clear the list and delete the entire list 
+    (iii) sort the list, reverse sort, copy list, join list using "+" operator
+ Logic Question:
+   	Write a program in Python to remove duplicate items from a list
+	Python program to find second largest number in a list 
 7. Tuples
+  - Create two tuples with different data type values:
+  (i)  with and without duplicates
+  (ii) with and without tuple constructor 
+  - print the  tuple's length, and items:
+  (i) use for/while(range) loop 
+  (i) tuple comprehension 
+  (iii) program to check if a specified element presents in a tuple of tuples (using if/in)
+  (iv) program to unzip a list of tuples into individual lists
+       (https://www.geeksforgeeks.org/python-unzip-a-list-of-tuples/)
+ - apply the functions of tuples:
+  (i)   packing and unpacking 
+  (ii)  modify the tuple 
+  (iii) add two tuples, multiply   
+ - Logic Questions:
+    Write a Python program to calculate the average value of the numbers in a given tuple of tuples
+	Write a Python program to create the colon of a tuple
+
 8. Sets
+(set can't be accessed using index)
+- Create a set with fruits and do the following:
+   (i) add new fruit, remove/discard, clear , del 
+   (ii) merge two sets 
+   (iii) print the set 
+- apply set operations:
+   (i) union and intersection 
+   (ii) update and  intersection_update 
+   (iii) symmetric_difference and symmetric_difference_update 
+- Logic problems:
+    (i) Write a Python program to create a shallow copy of sets
+	(ii) Write a Python program to use of frozensets.
+	(iii) Write a Python program to check if a given set is superset of itself and superset of another given set       	
 9. Dictionaries
+-create simple dictionary with different data type values and do the following:
+   (i) print the items one by one and all items 
+   (ii) print the keys alone 
+   (iii) print the values alone 
+   (iv) print value for a given key 
+   (v) check if the key exist or not 
+   (iv) use type and len function on dictionary 
+-Update existing dictionary:
+   (i) add new items using update function 
+   (ii) using [] add new items 
+   (ii) remove item using pop(),  popitem(), del , clear the dictionary 
+-Create dictionaries using dict() and .copy methods 
+-create a nested dictionary and print each values 
+-Logic questions:
+   Write a Python program to create a dictionary of keys x, y, and z where each key has as value a list from 11-20, 21-30, and 31-40 respectively. Access the fifth value of each key from the dictionary.
+	Write a Python program to convert a given dictionary into a list of lists.
+	Write a Python program to create a key-value list pairings in a given dictionary.
+	Write a Python program to invert a dictionary with unique hashable values.
+	Write a Python program to map the values of a given list to a dictionary using a function, where the key-value pairs consist of the original value as the key and the result of the function as the value
+
+Ravi : 10 - 19 
+==============
+
 10 If Else
+   - program for using if/else, if/elif/else, nested if, if /pass statement and else 
+   - input a number and print if it is even or not  
 11 For/While Loop
+- while loop
+  (i) simple while loop 
+  (ii) while loop with continue, break and else  
+- for loop 
+  (i) simple for loop /using range 
+  (ii)for loop with continue, break, pass and else  
 12 Function/Lambda function
+	- define a simple function to calculate the square value 
+	- define a function with arbitrary arguments 
+	- define a function with keyword arguments 
+	- example function with keyword arguments call and default argument value 
+	- recursive function 
+	- example lambda function for calculating square value
 13 Class Objects
+- define a simple customer class with name, age, nationality members 
+  (i) initialize the class members inside __init__ function 
+  (ii) implement get and set functions for each member 
+- create new object for the class and print the values 
+- delete the object member and object itself.
 14 Inheritance
+- Derivate a child class from the parent class Customer 
+- initialize the parent class members using Class.__init__ and super().__init__ approaches 
+- print the values
 15 Iterator
+- Define a tuple, get the iterator, and print the values 
+- define a class for iterator operations (__iter___ and __next__ ) 
+   print the values from the outside 
 16 Scope
+ (Local, Global, Built-in, Enclosed scopes )
+ - create a simple program to under stand Local, Global,  Enclosed scopes 
 17 Modules
+   create a simple .py file to expose squre function and use it in different file (advantage : reusability)
 18 Dates
+ - print the current date using datetime library. 
+ - print the month name and weekday
 19 Math library functions 
+   use math library and find floor, ceil and sqrt of a value 
 Hencil : 20 - 27
+================
 20 Json
    - prepare json from dictionary ( 3 student records ), list, tuple and normal variables  
    - create a common function that receive the json object and print the same on the command prompt (use indent 4).
@@ -58,13 +230,12 @@ Hencil : 20 - 27
      Income Tax :
      *******************************************************	 
 24 File Handling 
-     - Implement a python function to read a file  using read function with mode "rt" mode.
+     - Implement a python function to read a file  using read function (and With open approach)  using mode "rt" mode.
 	 -  print the first 25 characters of a file. 
 	 -  print the first 5 lines of a file. 
 	 -  Read the file content, change each words' first character to capital letter and write back the contend to a file. 
 	 -  Write few lines of string content using append mode. 
-	 -  write function to remove a file and directory. 
-	 /readfiles
+	 -  write function to remove a file and directory, and readfiles
 25. using yield, zip, broadcast to
     - implement a function to return all the even numbers and generate the results using yield function. 
 	- merge two list (name and age ) and print each customer name and age individually
@@ -88,8 +259,8 @@ Hencil : 20 - 27
 	(iv) find the average balance of customers from USA 
 
 28. String formatting 
-    - use string format() function and print customer name and salary using 2 decimal formatting. 
-	- use string format() using index numbers 
+    - use string format() function -> print customer name and salary using 2 decimal formatting. 
+	- use string format()-> using index numbers 
     - use string format() using named index
 
 
@@ -100,18 +271,17 @@ Open items:
 
 
 simple backlog
-(1) What is monkey patching?
-What is pickling and unpickling?
-Flask and Django
-Python decorators? @property
-What is dictionary comprehension?
-How would you achieve memoization in Python?
-How would you sort a dictionary in Python?
-What is a Python Docstring?
-Explain the difference between a generator and an iterator in Python.
-
-What is defaultdict in Python?
-What are Python modules?
+(1) What is monkey patching? done 
+(2) What is pickling and unpickling? - done 
+(3) Flask and Django - done 
+(4) Python decorators? @property  - done 
+(5) What is dictionary comprehension? - done 
+(6) How would you achieve memoization in Python? - done  
+(7) How would you sort a dictionary in Python? - done 
+(8) What is a Python Docstring? - done 
+(9) Explain the difference between a generator and an iterator in Python. - done 
+(10) What is defaultdict in Python? - done 
+(11) What are Python modules?
 
 
 Python Interview Questions 
