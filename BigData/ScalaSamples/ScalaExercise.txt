@@ -1,0 +1,52 @@
+1. Datatypes and variables 
+   1.1 write a program to demo the usage of nine datatypes in Scala using mutable and immutable variables  
+   (Boolean, Byte, Short, Char, Int, Float, Double, Char, String)
+   1.2 write program to use the keywords Unit, Any, Null, Nothing and AnyRef 
+   1.3 write program for lazy loading 
+   1.4 Define multiple variable and return the result using curly braces.
+2. String Interpolation 
+   2.1 write a Scala program to show the usage of String:
+        - using f before string 
+        - using "raw" before the string 
+        - using "s" before the string 
+        - use the "+" for adding two string 
+3. program for if/else, if/elseif/else 
+4. program for while, do/while, for (to, .to, until .until, list iteration, with filter, with yield . 		
+5. program for match (case, _ ) 
+6. create  simple function (with/without return) with four approaches 
+7. Anonymous function and default values 
+8. program for higher order function in Scala 
+   i.e function takes and/or return function as parameter and result
+9. program for partially applied function 
+10. program for closure and currying in Scala 
+11. simple program for Scala,
+   11.1  String and its functions (concate, format, length ) 
+   11.2  Arrays using different creation types and using String/Int types 
+12. Scala program for List 
+     - print list items - prepend values - fill - foreach - for - (1::5::9::Nil) 
+13. Scala Set 
+     - use ++ operator (for two sets variables) 
+	 - print the set values 
+14. Scala Maps 
+     - create a simple Map and print its values/keys/items 
+	 - add two maps  (using ++ sign ) 
+15. program for Scala tuples 
+     - using ()
+	 - using Tuple3 
+	 - access members using _1, _2, etc 
+16. program for Scala option types 
+     - Option/None/Some 
+17. program using,
+       (17.1) map   - iterate over the collection 
+	   (17.2) flatMap - map the collection and flatten 
+	   (17.3) flatten -  flatten the content of the list 
+	   (17.4) filter 
+18. program for reduce, folder and scan 
+19. Scala program for simple class (getter and setter, constructor )
+20. auxiliary constructor example 
+21. program for inheritance and abstract class 
+22. Scala program using traits
+
+
+	 
+	 
