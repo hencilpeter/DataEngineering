@@ -37,7 +37,7 @@
 16. program for Scala option types 
      - Option/None/Some 
 17. program using,
-       (17.1) map   - iterate over the collection 
+       (17.1) map      - iterate over the collection 
 	   (17.2) flatMap - map the collection and flatten 
 	   (17.3) flatten -  flatten the content of the list 
 	   (17.4) filter 

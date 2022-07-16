@@ -1,0 +1,169 @@
+Question?
+how to design table ? which tool can be used ? while designing datawarehouse, how to decide which table can be ingested as it is and which table require re-design ? ER Diagram which tool been used? what are the diagram being used for designing ? what are the docs (e.g data dictionary ) 
+
+
+
+sources : https://career.guru99.com/top-50-datawarehousing-questions-answers/
+
+Data warehousing interview questions:
+
+1. What is Datawarehousing?
+Datawarehouse is the repository of a data and it is used for Management decision support system. Datawarehouse consists of wide variety of data that has high level of business conditions at a single point in time. it is repository of integrated information which can be available for queries and analysis.
+2. What is Business Intelligence?
+Also known as DSS – Decision support system which refers to the technologies, application and practices for the collection, integration and analysis of the business related information or data. 
+3. Dimension Table?
+A dimension table stores attributes, or dimensions, that describe the objects in a fact table. In data warehousing, a dimension is a collection of reference information about a measurable event.
+4.  What is Fact Table?
+Fact table contains the measurement of business processes, and it contains foreign keys for the dimension tables.
+Example – If the business process is manufacturing of bricks. Average number of bricks produced by one person/machine – measure of the business process
+5. What are the stages of Datawarehousing?
+(i) Operational Systems (e.g marketing, sales, CRM ) (ii) Integration layer (staging. ) (iii) Data Warehouse (iv) Data Marts 
+
+Offline Operational Database : initial stage where data is simply copied to a server from an operating system. so it will not affect the performance later?
+Offline Data Warehouse : data is usually copied and pasted from real time data networks into an offline system
+Real Time Datawarehouse :
+Integrated Datawarehouse :  combines data from several sources into a single, unified warehouse.
+6. What is Data Mining?
+process of analyzing the data in different dimensions or perspectives and summarizing into a useful information. Can be queried and retrieved the data from database in their own format.
+7. What is OLTP?
+   On-Line Transaction Processing. it is an application that modifies the data whenever it received and has large number of simultaneous users.
+8. What is OLAP?
+   Online Analytical Processing. A system which collects, manages, processes multi-dimensional data for analysis and management purposes.
+9. What is the difference between OLTP and OLAP?
+	OLTP												OLAP
+(i)   Data is from original data source					Data is from various data sources
+(ii)  Simple queries by users							Complex queries by system
+(iii) Normalized small database							De-normalized Large Database
+(iv)  Fundamental business tasks						Multi-dimensional business tasks
+(v)   More no. of write 								more no. of reads 
+(vi)  quick response is essentail                       slow response as quries are complex. 
+(vii) RDBMS 											data warehouse 
+
+10. What is ODS?
+ Operational Data Store. It is a repository of real time operational data rather than long term trend data.
+11. What is the difference between View and Materialized View?
+   (i) Views are not stored physically on the disk. On the other hands, Materialized Views are stored on the disc.
+   (ii) View can be defined as a virtual table created as a result of the query expression. However, Materialized View is a physical copy, picture or snapshot of the base table.
+   (ii) A view is always updated as the query creating View executes each time the View is used. On the other hands, Materialized View is updated manually or by applying triggers to it.
+   (iii) Materialized View responds faster than View as the Materialized View is precomputed.
+   (iv) Materialized View utilizes the memory space as it stored on the disk whereas, the View is just a display hence it do not require memory space.
+
+12. What is ETL?
+   Extract, Transform and Load. (i) reads the data from the specified data source and extracts a desired subset of data.  (ii) transform the data using rules and lookup tables (iii) convert it to a desired state.
+13. What is VLDB?
+    Very Large Database and its size is set to be more than one terabyte database. These are decision support systems which is used to serve large number of users.
+14. What is real-time datawarehousing?
+   Captures the business data whenever it occurs. When there is business activity gets completed, that data will be available in the flow and become available for use instantly.
+15.[D] What are Aggregate tables?
+	Contain the existing warehouse data which has been grouped to certain level of dimensions. It is easy to retrieve data from the aggregated tables than the original table which has more number of records.
+    This table reduces the load in the database server and increases the performance of the query.
+16. What is factless fact tables?
+	are the fact table which doesn’t contain numeric fact column in the fact table.
+17.[D] How can we load the time dimension?
+	Time dimensions are usually loaded through all possible dates in a year and it can be done through a program. Here, 100 years can be represented with one row per day.
+18.[D] What are Non-additive facts?
+	facts that cannot be summed up for any of the dimensions present in the fact table. If there are changes in the dimensions, same facts can be useful.
+19. What is conformed fact?
+	is a table which can be used  across multiple data marts in combined with the multiple fact tables.
+20. What is Datamart?
+    A Datamart is a specialized version of Datawarehousing and it contains a snapshot of operational data that helps the business people to decide with the analysis of past trends and experiences.
+21. What is Active Datawarehousing?
+	datawarehouse that enables decision makers within a company or organization to manage customer relationships effectively and efficiently
+22. What is the difference between Datawarehouse and OLAP?
+	Datawarehouse is a place where the whole data is stored for analyzing, but OLAP is used for analyzing the data, managing aggregations, information partitioning into minor level information.
+23. What is ER Diagram?
+	Entity-Relationship diagram,  which illustrates the interrelationships between the entities in the database. This diagram shows the structure of each tables and the links between the tables.
+24.[D] What are the key columns in Fact and dimension tables?
+	(i) Foreign keys of fact tables are the primary keys of the dimension tables.
+	[D](ii) Foreign keys of dimension tables are primary keys of entity tables. 
+25. What is SCD?
+	slowly changing dimensions, and it applies to the cases where record changes over time.
+26.[D] What are the types of SCD?
+[D]SCD 1 – The new record replaces the original record  (only active snapshot) delete and insert ?
+SCD 2 – A new record is added to the existing customer dimension table (history)
+SCD 3 – A original data is modified to include new data (update?)
+27.[D] What is BUS Schema?
+ consists of suite of confirmed dimension and standardized definition if there is a fact tables.
+ refer : https://www.careerride.com/Data-warehousing-BUS-schema.aspx
+28. What is Star Schema?
+	Each dimension in a star schema is represented with only one-dimension table.
+	This dimension table contains the set of attributes.
+ refer : https://www.tutorialspoint.com/dwh/dwh_schemas.htm  
+29. What is Snowflake Schema?
+	Some dimension tables in the Snowflake schema are normalized. The normalization splits up the data into additional tables.
+30. What is a core dimension?
+	Dimension table which is used as dedicated for single fact table or datamart.
+31. What is called data cleaning?
+	Cleaning of Orphan records, Data breaching business rules, Inconsistent data and missing information in a database.
+32. What is Metadata?
+	Metadata is defined as data about the data. The metadata contains information like number of columns used, fix width and limited width, ordering of fields and data types of the fields.
+33.[D] What are loops in Datawarehousing?
+    ( a set of SQL statements are executed repeatedly until a condition is met.  ? )
+	 If there is a loop between the tables, then the query generation will take more time and it creates ambiguity. It is advised to avoid loop between the tables.
+34. Whether Dimension table can have numeric value?
+	Yes, dimension table can have numeric value as they are the descriptive elements of our business.
+35. What is the definition of Cube in Datawarehousing?
+	Cubes are logical representation of multidimensional data. The edge of the cube has the dimension members,and the body of the cube contains the data values.
+36. What is called Dimensional Modelling?
+	Dimensional Modeling is a concept which can be used by dataware house designers to build their own datawarehouse. This model can be stored in two types of tables – Facts and Dimension table. Fact table has facts and measurements of the business and dimension table contains the context of measurements.
+37.[D] What are the types of Dimensional Modeling?
+	Following are the Types of Dimensions in Data Warehouse:
+		Conformed Dimension
+		Outrigger Dimension
+		Shrunken Dimension
+		Role-playing Dimension
+		Dimension to Dimension Table
+		Junk Dimension
+		Degenerate Dimension
+		Swappable Dimension
+		Step Dimension
+38.[D] What is surrogate key?
+	a substitute for the natural primary key. It is set to be a unique identifier for each row that can be used for the primary key to a table.
+	example ?
+39.[D] What is the difference between ER Modeling and Dimensional Modeling?
+	ER modeling will have logical and physical model but Dimensional modeling will have only Physical model.
+	ER Modeling is used for normalizing the OLTP database design whereas Dimensional Modeling is used for de-normalizing the ROLAP and MOLAP design.
+40. What are the steps to build the datawarehouse?
+Following are the steps to be followed to build the datawaerhouse:
+ (i) Gathering business requirements (ii) Identifying the necessary sources (iii) Identifying the facts
+ (iv) Defining the dimensions (v) Defining the attributes (vi) Redefine the dimensions and attributes if required
+ (vii) Organize the Attribute hierarchy (viii) Define Relationships (ix) Assign unique Identifiers
+41. What are the different types of datawarehosuing?
+   (i) Enterprise Datawarehousing (ii) Operational Data Store (iii) Data Mart
+42. What needs to be done while starting the database?
+ (i) Start an Instance (ii) Mount the database (iii) Open the database
+43. What needs to be done when the database is shutdown?
+ (i) Close the database (ii) Dismount the database (iii) Shutdown the Instance
+44. Can we take backup when the database is opened?
+	Yes, we can take full backup when the database is opened
+45.[D] What is defined as Partial Backup?
+	A Partial backup in an operating system is a backup short of full backup and it can be done while the database is opened or shutdown.
+46. What is the goal of Optimizer?
+	The goal to Optimizer is to find the most efficient way to execute the SQL statements.
+47. What is Execution Plan?
+ is a plan which is used to the optimizer to select the combination of the steps.
+48. What are the approaches used by Optimizer during execution plan?
+	(i) Rule Based (ii) Cost Based
+49. What are the tools available for ETL?
+	(i) Informatica (ii) Data Stage (iii) Oracle (iv) Warehouse Builder (iv) Ab Initio (v) Data Junction
+50.What is the difference between metadata and data dictionary?
+	Metadata is defined as data about the data. But, Data dictionary contain the information about the project information, graphs, abinito commands and server information.
+=========================================================================================================================	
+Multidimensional database? 
+A multidimensional database (MDB) is a type of database that is optimized for data warehouse and online analytical processing (OLAP) applications. 
+MDBs are frequently created using input from existing relational databases. An OLAP application that accesses data from a multidimensional database is known as a multidimensional OLAP (MOLAP) application. The basic actions carried out on a Multidimensional database as a part of OLAP are Roll-up, Drill-down, Slice & Dice, in order to retrieve the required data from the database, where data is organized in the form of multidimensional cubes.
+
+It represents data in the form of data cubes. Data cubes allow to model and view the data from many dimensions and perspectives. It is defined by dimensions and facts and is represented by a fact table. Facts are numerical measures and fact tables contain measures of the related dimensional tables or names of the facts.
+
+Steps involved:
+  1. Assembling data from the client : collects correct data from the client
+  2. Grouping different segments of the system:  recognizes and classifies all the data to the respective section 
+  3. Noticing the different proportions: the main factors are recognized according to the user’s point of view. These factors are also known as “Dimensions”.
+  4. Preparing the actual-time factors and their respective qualities: the factors which are recognized in the previous step are used further for identifying the related qualities. These qualities are also known as “attributes” in the database.
+  5. Finding the actuality of factors which are listed previously and their qualities: separates and differentiates the actuality from the factors which are collected by it
+  6. Building the Schema to place the data, with respect to the information collected from the steps above  : build the final schema. 
+e.g https://www.techtarget.com/searchoracle/definition/multidimensional-database#:~:text=A%20multidimensional%20database%20(MDB)%20is,input%20from%20existing%20relational%20databases.
+https://www.geeksforgeeks.org/multidimensional-data-model/
+
+Question : simple example in ADSS. positions from SG, HK, BK ? how to represent?
+
