@@ -1,30 +1,37 @@
 Question?
-how to design table ? which tool can be used ? while designing datawarehouse, how to decide which table can be ingested as it is and which table require re-design ? ER Diagram which tool been used? what are the diagram being used for designing ? what are the docs (e.g data dictionary ) 
+(-) how to design table ? which tool can be used ? 
+	identify the attributes and primary key for the table.  
+	data modeling tool: erwin Data Modeler [check later]
+(-) while designing datawarehouse, how to decide which table can be ingested as it is and which table require re-design ? 
+	real-time example: In iODP, bad performance noticed due to the existing primary key (4 candidate keys) in a table. After 1 year, due to the huge volume of data, performance issue triggered while writing (due to indexed primary columns). 
+                       solution: introduced surogate keys and enabled non-clustered index for the existing primary keys. 					   
+(-) ER Diagram which tool been used? what are the diagram being used for designing ? what are the docs (e.g data dictionary ) 
+	ER/Studio?
 
-
+modelling: logical , physical, conceptual [D]
 
 sources : https://career.guru99.com/top-50-datawarehousing-questions-answers/
 
 Data warehousing interview questions:
 
 1. What is Datawarehousing?
-Datawarehouse is the repository of a data and it is used for Management decision support system. Datawarehouse consists of wide variety of data that has high level of business conditions at a single point in time. it is repository of integrated information which can be available for queries and analysis.
+	Datawarehouse is the repository of a data and it is used for Management decision support system. Datawarehouse consists of wide variety of data that has high level of business conditions at a single point in time. it is repository of integrated information which can be available for queries and analysis.
 2. What is Business Intelligence?
-Also known as DSS – Decision support system which refers to the technologies, application and practices for the collection, integration and analysis of the business related information or data. 
+	Also known as DSS – Decision support system which refers to the technologies, application and practices for the collection, integration and analysis of the business related information or data. 
 3. Dimension Table?
-A dimension table stores attributes, or dimensions, that describe the objects in a fact table. In data warehousing, a dimension is a collection of reference information about a measurable event.
+	A dimension table stores attributes, or dimensions, that describe the objects in a fact table. In data warehousing, a dimension is a collection of reference information about a measurable event.
 4.  What is Fact Table?
-Fact table contains the measurement of business processes, and it contains foreign keys for the dimension tables.
-Example – If the business process is manufacturing of bricks. Average number of bricks produced by one person/machine – measure of the business process
+	Fact table contains the measurement of business processes, and it contains foreign keys for the dimension tables.
+	Example – If the business process is manufacturing of bricks. Average number of bricks produced by one person/machine – measure of the business process
 5. What are the stages of Datawarehousing?
-(i) Operational Systems (e.g marketing, sales, CRM ) (ii) Integration layer (staging. ) (iii) Data Warehouse (iv) Data Marts 
+	(i) Operational Systems (e.g marketing, sales, CRM ) (ii) Integration layer (staging. ) (iii) Data Warehouse (iv) Data Marts 
 
-Offline Operational Database : initial stage where data is simply copied to a server from an operating system. so it will not affect the performance later?
-Offline Data Warehouse : data is usually copied and pasted from real time data networks into an offline system
-Real Time Datawarehouse :
-Integrated Datawarehouse :  combines data from several sources into a single, unified warehouse.
+	(-) Offline Operational Database : Initial stage where data is simply copied to a server from an operating system. so it will not affect the performance later?
+	(-) Offline Data Warehouse : data is usually copied and pasted from real time data networks into an offline system
+	(-) Real Time Datawarehouse :
+	(-) Integrated Datawarehouse :  combines data from several sources into a single, unified warehouse.
 6. What is Data Mining?
-process of analyzing the data in different dimensions or perspectives and summarizing into a useful information. Can be queried and retrieved the data from database in their own format.
+	process of analyzing the data in different dimensions or perspectives and summarizing into a useful information.
 7. What is OLTP?
    On-Line Transaction Processing. it is an application that modifies the data whenever it received and has large number of simultaneous users.
 8. What is OLAP?
@@ -42,20 +49,22 @@ process of analyzing the data in different dimensions or perspectives and summar
 10. What is ODS?
  Operational Data Store. It is a repository of real time operational data rather than long term trend data.
 11. What is the difference between View and Materialized View?
-   (i) Views are not stored physically on the disk. On the other hands, Materialized Views are stored on the disc.
+   (i)  Views are NOT stored physically on the disk. On the other hands, Materialized Views are stored on the disc.
    (ii) View can be defined as a virtual table created as a result of the query expression. However, Materialized View is a physical copy, picture or snapshot of the base table.
-   (ii) A view is always updated as the query creating View executes each time the View is used. On the other hands, Materialized View is updated manually or by applying triggers to it.
-   (iii) Materialized View responds faster than View as the Materialized View is precomputed.
-   (iv) Materialized View utilizes the memory space as it stored on the disk whereas, the View is just a display hence it do not require memory space.
-
+   (iii) A view is always updated as the query creating View executes each time the View is used. On the other hands, Materialized View is updated manually or by applying triggers to it.
+   (iv)  Materialized View responds faster than View as the Materialized View is precomputed.
+   (v)   Materialized View utilizes the memory space as it stored on the disk whereas, the View is just a display hence it do not require memory space.
+   (we can't create index on view but insert/update are possible )
+   
 12. What is ETL?
    Extract, Transform and Load. (i) reads the data from the specified data source and extracts a desired subset of data.  (ii) transform the data using rules and lookup tables (iii) convert it to a desired state.
+   (-) when to use ETL and when to use ELT?
 13. What is VLDB?
     Very Large Database and its size is set to be more than one terabyte database. These are decision support systems which is used to serve large number of users.
 14. What is real-time datawarehousing?
    Captures the business data whenever it occurs. When there is business activity gets completed, that data will be available in the flow and become available for use instantly.
-15.[D] What are Aggregate tables?
-	Contain the existing warehouse data which has been grouped to certain level of dimensions. It is easy to retrieve data from the aggregated tables than the original table which has more number of records.
+15. What are Aggregate tables?
+	Contains the existing warehouse data which has been grouped to certain level of dimensions. It is easy to retrieve data from the aggregated tables than the original table which has more number of records.
     This table reduces the load in the database server and increases the performance of the query.
 16. What is factless fact tables?
 	are the fact table which doesn’t contain numeric fact column in the fact table.
@@ -63,7 +72,7 @@ process of analyzing the data in different dimensions or perspectives and summar
 	Time dimensions are usually loaded through all possible dates in a year and it can be done through a program. Here, 100 years can be represented with one row per day.
 18.[D] What are Non-additive facts?
 	facts that cannot be summed up for any of the dimensions present in the fact table. If there are changes in the dimensions, same facts can be useful.
-19. What is conformed fact?
+19. [D]What is conformed fact?
 	is a table which can be used  across multiple data marts in combined with the multiple fact tables.
 20. What is Datamart?
     A Datamart is a specialized version of Datawarehousing and it contains a snapshot of operational data that helps the business people to decide with the analysis of past trends and experiences.
@@ -79,12 +88,14 @@ process of analyzing the data in different dimensions or perspectives and summar
 25. What is SCD?
 	slowly changing dimensions, and it applies to the cases where record changes over time.
 26.[D] What are the types of SCD?
-[D]SCD 1 – The new record replaces the original record  (only active snapshot) delete and insert ?
-SCD 2 – A new record is added to the existing customer dimension table (history)
-SCD 3 – A original data is modified to include new data (update?)
-HyBRID SCD (1 & 2) : Hybrid SCDs are a combination of both SCD 1 and SCD 2.
-It may happen that in a table, some columns are important and we need to track changes for them i.e., capture the historical data for them whereas in some columns even if the data changes, we do not have to bother.
-For such tables, we implement Hybrid SCDs, where in some columns are Type 1 and some are Type 2.
+	[D]SCD 1 – The new record replaces the original record  (only active snapshot) 
+	SCD 2 – A new record is added to the existing customer dimension table (history)
+	SCD 3 – A original data is modified to include new data. 
+	 i.e  by adding new columns to target table we maintain historical information and current information.
+	HyBRID SCD (1 & 2) : Hybrid SCDs are a combination of both SCD 1 and SCD 2.
+	It may happen that in a table, some columns are important and we need to track changes for them 
+	i.e., capture the historical data for them whereas in some columns even if the data changes, we do not have to bother.
+	For such tables, we implement Hybrid SCDs, where in some columns are Type 1 and some are Type 2.
 
 27.[D] What is BUS Schema?
  consists of suite of confirmed dimension and standardized definition if there is a fact tables.
@@ -92,6 +103,7 @@ For such tables, we implement Hybrid SCDs, where in some columns are Type 1 and 
 28. What is Star Schema?
 	Each dimension in a star schema is represented with only one-dimension table.
 	This dimension table contains the set of attributes.
+	how many fact/dimension tables in star schema ? [D]
  refer : https://www.tutorialspoint.com/dwh/dwh_schemas.htm  
 29. What is Snowflake Schema?
 	Some dimension tables in the Snowflake schema are normalized. The normalization splits up the data into additional tables.
@@ -106,7 +118,7 @@ For such tables, we implement Hybrid SCDs, where in some columns are Type 1 and 
 	 If there is a loop between the tables, then the query generation will take more time and it creates ambiguity. It is advised to avoid loop between the tables.
 34. Whether Dimension table can have numeric value?
 	Yes, dimension table can have numeric value as they are the descriptive elements of our business.
-35. What is the definition of Cube in Datawarehousing?
+35. [D] What is the definition of Cube in Datawarehousing?
 	Cubes are logical representation of multidimensional data. The edge of the cube has the dimension members,and the body of the cube contains the data values.
 36. What is called Dimensional Modelling?
 	Dimensional Modeling is a concept which can be used by dataware house designers to build their own datawarehouse. This model can be stored in two types of tables – Facts and Dimension table. Fact table has facts and measurements of the business and dimension table contains the context of measurements.
@@ -127,7 +139,7 @@ For such tables, we implement Hybrid SCDs, where in some columns are Type 1 and 
 39.[D] What is the difference between ER Modeling and Dimensional Modeling?
 	ER modeling will have logical and physical model but Dimensional modeling will have only Physical model.
 	ER Modeling is used for normalizing the OLTP database design whereas Dimensional Modeling is used for de-normalizing the ROLAP and MOLAP design.
-40. What are the steps to build the datawarehouse?
+40.[D] What are the steps to build the datawarehouse?
 Following are the steps to be followed to build the datawaerhouse:
  (i) Gathering business requirements (ii) Identifying the necessary sources (iii) Identifying the facts
  (iv) Defining the dimensions (v) Defining the attributes (vi) Redefine the dimensions and attributes if required
@@ -145,7 +157,7 @@ Following are the steps to be followed to build the datawaerhouse:
 46. What is the goal of Optimizer?
 	The goal to Optimizer is to find the most efficient way to execute the SQL statements.
 47. What is Execution Plan?
- is a plan which is used to the optimizer to select the combination of the steps.
+ is a plan which is used by the optimizer to select the combination of the steps.
 48. What are the approaches used by Optimizer during execution plan?
 	(i) Rule Based (ii) Cost Based
 49. What are the tools available for ETL?
@@ -153,7 +165,7 @@ Following are the steps to be followed to build the datawaerhouse:
 50.What is the difference between metadata and data dictionary?
 	Metadata is defined as data about the data. But, Data dictionary contain the information about the project information, graphs, abinito commands and server information.
 =========================================================================================================================	
-(i) Multidimensional database? 
+(i) [D]Multidimensional database? 
 A multidimensional database (MDB) is a type of database that is optimized for data warehouse and online analytical processing (OLAP) applications. 
 MDBs are frequently created using input from existing relational databases. An OLAP application that accesses data from a multidimensional database is known as a multidimensional OLAP (MOLAP) application. The basic actions carried out on a Multidimensional database as a part of OLAP are Roll-up, Drill-down, Slice & Dice, in order to retrieve the required data from the database, where data is organized in the form of multidimensional cubes.
 
@@ -231,12 +243,12 @@ reference : https://www.geeksforgeeks.org/difference-between-kimball-and-inmon/
 	Divisive Hierarchical clustering method :  Works on the top-down approach. In this method all the objects are arranged within a big singular cluster and the large cluster is continuously divided into smaller clusters until each cluster has a single object.
 reference: https://benchpartner.com/q/differentiate-agglomerative-and-divisive-hierarchical-clustering
 
-(6) Cluster analysis in DW [D]
+(6)[D] Cluster analysis in DW 
 	Cluster analysis is used to define the object without giving the class label. It analyzes all the data that is present in the data warehouse and compare the cluster with the cluster that is already running. 
 	It performs the task of assigning some set of objects into the groups are also known as clusters. It is used to perform the data mining job using the technique like statistical data analysis. It includes all the information and knowledge around many fields like machine learning, pattern recognition, image analysis and bio-informatics. Cluster analysis performs the iterative process of knowledge discovery and includes trials and failures. It is used with the pre-processing and other parameters as a result to achieve the properties that are desired to be used.
 
 reference : https://www.sawaal.com/data-warehousing-interview-questions/what-is-the-purpose-of-cluster-analysis-in-data-warehousing_7147#:~:text=Cluster%20analysis%20is%20used%20to,cluster%20that%20is%20already%20running.
-(7)  chameleon method used in data warehousing? [D]
+(7) [D] chameleon method used in data warehousing? 
 operates on the sparse graph having nodes: that represent the data items, and edges: representing the weights of the data items.
 This representation allows large dataset to be created and operated successfully. The method finds the clusters that are used in the dataset using two phase algorithm.
 
@@ -247,12 +259,12 @@ reference : http://interviewquestionsanswers.org/__Explain-me-why-is-chameleon-m
 (8)What is active data warehousing?
 	An Active data warehouse aims to capture data continuously and deliver real time data. They provide a single integrated view of a customer across multiple business lines. It is associated with Business Intelligence Systems.
 
-(9)Virtual Data Warehousing ?
+(9)[D] Virtual Data Warehousing ?
  It is is an independent compute resource that can be leveraged at any time for SQL execution and DML (Data Manipulation Language) and then turned off when it isn’t needed. For decades, traditional on-premise data warehouses have tightly coupled data storage and compute, making it a challenge to scale either on-demand. However, today’s businesses need to store and analyze vast quantities of both structured and unstructured data from disparate services, necessitating a service that can respond to large data volumes and variable compute needs for applications such as visualization.
  reference : https://www.snowflake.com/data-warehousing-glossary/virtual-warehouse/
  
-(10)Snapshot : Snapshot refers to a complete visualization of data at the time of extraction.
-(11)XMLA [D]
+(10) Snapshot : Snapshot refers to a complete visualization of data at the time of extraction.
+(11)[D] XMLA 
 XML for Analysis (XMLA) is a SOAP-based XML protocol, designed specifically for universal data access to any standard multidimensional data source that can be accessed over an HTTP connection.
 (12) ODS (Operational Data Store)
 An operational data store usually stores and processes data in real time. An ODS is connected to multiple data sources and pulls data into a central location.
@@ -260,7 +272,7 @@ An operational data store usually stores and processes data in real time. An ODS
 The granularity is the lowest level of information stored in the fact table. The depth of data level is known as granularity. In date dimension the level could be year, month, quarter, period, week, day of granularity.
 reference : https://www.careerride.com/Data-warehousing-Granularity-fact-table.aspx#:~:text=The%20granularity%20is%20the%20lowest,%2C%20week%2C%20day%20of%20granularity.
 
-(14)Junk Dimension ?[D]
+(14) [D] Junk Dimension ?
 Junk Dimension also called as garbage dimension. A garbage dimension is a dimension that consists of low-cardinality columns such as codes, indicators, status, and flags. The garbage dimension is also referred to as a junk dimension. Attributes in a garbage dimension are not related to any hierarchy.
 (15)Normalization:
 Normalization is the process of reorganizing data in a database so that it meets two basic requirements: There is no redundancy of data, all data is stored in only one place. 
@@ -273,7 +285,7 @@ BCNF: BCNF (Boyce Codd Normal Form) is the advanced version of 3NF. A table is i
 4NF	A relation will be in 4NF if it is in Boyce Codd's normal form and has no multi-valued dependency.
 5NF	A relation is in 5NF. If it is in 4NF and does not contain any join dependency, joining should be lossless.
 
-(16)Why do we override the execute method in Struts
+(16)[D] Why do we override the execute method in Struts
 	As part of Struts FrameWork we can decvelop the Action Servlet,ActionForm servlets(here ActionServlet means which class extends the Action class is called ActionServlet and ActionFome means which calss extends the ActionForm calss is called the Action Form servlet)and other servlets classes.
 	reference : http://dba.fyicenter.com/Interview-Questions/Data-Warehousing/Why_do_we_override_the_execute_method_is_struts_.html
 (17) Conformed Dimension [D]
@@ -294,31 +306,31 @@ Conformed is the same dimension used in different facts and has the same meaning
 (21)[D]What do you mean by the Slice action ? How many slice-operated dimensions are used ?
 	Filtration process
 
-(22) What do you mean by threshold value validation
+(22)[D] What do you mean by threshold value validation
 	The Threshold Validation job is used to evaluate configured thresholds (threshold setup) and send out the appropriate alerts from the application.
-(22) 3 approache that could be followed for system integration Testing
-	TD :  ETL > Validate > DW > DM
-	BU :  ETL > Validate > DM > DW
+(22) 3 approaches that could be followed for system integration Testing
+	Top to Down   :  ETL > Validate > DW > DM
+	Bottom to Up  :  ETL > Validate > DM > DW
 	Hybrid
-(23) A database schema 
+(23)[D] A database schema 
 	 - A database schema is a blueprint or architecture of how our data will look. It doesn’t hold data itself, but instead describes the shape of the data and how it might relate to other tables or models. 
      - is an abstract design that represents the storage of your data in a database. It describes both the organization of data and the relationships between tables in a given database. Developers plan a database schema in advance so they know what components are necessary and how they will connect to each other.
 	reference : https://www.educative.io/blog/what-are-database-schemas-examples
 (24)How do you prevent data loss
 	(i) data backup in regular interval (ii) Keep your computer clean and dust-free. (iii) Keep your anti-virus software up to date. (iv) Create an image backup BEFORE the first signs of hard drive failure.
 (25)Explain logshipping
-SQL Server Log shipping allows you to automatically send transaction log backups from a primary database on a primary server instance to one or more secondary databases on separate secondary server instances.
+	SQL Server Log shipping allows you to automatically send transaction log backups from a primary database on a primary server instance to one or more secondary databases on separate secondary server instances.
 (26)Describe the knowledge of cloud database
 	Db services on cloud platform
 	No Physical space required
 	It's highly secure and can be accessed simply using the webinterface
 (27)ODBC : 
-Open Database Connectivity (ODBC) is an open standard application programming interface (API) that allows application programmers to access any database.
+	Open Database Connectivity (ODBC) is an open standard application programming interface (API) that allows application programmers to access any database.
 (28)DBA day to day activity
 	Monitoring user access and security
 	Monitoring Sever health
 	Monitoring DB performance and Installing 
-	Monitoring new bersion of the databse
+	Monitoring new version of the databse
 	prompt response to end users
 (29)Troubleshoot database problems
 	Ticketing system	
@@ -336,4 +348,4 @@ Think about the relationships
 	Think about the missing relationship
 
 Think about the question you want to answer
-	what menu
+	what menu                                    
