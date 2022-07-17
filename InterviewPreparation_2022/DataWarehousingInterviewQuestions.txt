@@ -149,7 +149,7 @@ Following are the steps to be followed to build the datawaerhouse:
 50.What is the difference between metadata and data dictionary?
 	Metadata is defined as data about the data. But, Data dictionary contain the information about the project information, graphs, abinito commands and server information.
 =========================================================================================================================	
-Multidimensional database? 
+(i) Multidimensional database? 
 A multidimensional database (MDB) is a type of database that is optimized for data warehouse and online analytical processing (OLAP) applications. 
 MDBs are frequently created using input from existing relational databases. An OLAP application that accesses data from a multidimensional database is known as a multidimensional OLAP (MOLAP) application. The basic actions carried out on a Multidimensional database as a part of OLAP are Roll-up, Drill-down, Slice & Dice, in order to retrieve the required data from the database, where data is organized in the form of multidimensional cubes.
 
@@ -167,3 +167,22 @@ https://www.geeksforgeeks.org/multidimensional-data-model/
 
 Question : simple example in ADSS. positions from SG, HK, BK ? how to represent?
 
+
+(2) ROLAP vs MOLAP 
+	ROLAP 																	MOLAP
+	(i)		ROLAP stands for Relational Online Analytical Processing.		While MOLAP stands for Multidimensional Online Analytical Processing.
+	(ii)	ROLAP is used for large data volumes.							While it is used for limited data volumes.
+	(iii)	The access of ROLAP is slow.									While the access of MOLAP is fast.
+	(iv)	In ROLAP, Data is stored in relation tables.					While in MOLAP, Data is stored in multidimensional array.
+	(v)		In ROLAP, Data is fetched from data-warehouse.					While in MOLAP, Data is fetched from MDDBs database.
+	(vi)	In ROLAP, Complicated sql queries are used.						While in MOLAP, Sparse matrix is used.
+	(vii)	In ROLAP, Static multidimensional view of data is created.		While in MOLAP, Dynamic multidimensional view of data is created.
+   reference : https://www.geeksforgeeks.org/difference-between-rolap-and-molap/
+
+(3) Active vs Passive Transformation
+	Active transformation changes the number of rows number of rows that pass through the mapping. e.g. filter transformation 
+	In case of Passive transformation don’t change the number of rows. In passive transformations the number of input and output rows remain the same, only data is modified at row level.
+(4) Difference between Kimball and Inmon
+	
+	references : https://www.geeksforgeeks.org/difference-between-kimball-and-inmon/
+	
