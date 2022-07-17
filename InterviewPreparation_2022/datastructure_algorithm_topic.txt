@@ -147,7 +147,7 @@ Binary search tree (BST)
 
 		Time complexity : 
 		            average case : O(n log n)
-                   	worst case :	O(n log n)
+                   	worst case :	O(n^2)
 3. Searching 
    3.1 Linear Search 
    3.2 Binary Search 

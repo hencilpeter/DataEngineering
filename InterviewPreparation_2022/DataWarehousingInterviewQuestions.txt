@@ -82,6 +82,10 @@ process of analyzing the data in different dimensions or perspectives and summar
 [D]SCD 1 – The new record replaces the original record  (only active snapshot) delete and insert ?
 SCD 2 – A new record is added to the existing customer dimension table (history)
 SCD 3 – A original data is modified to include new data (update?)
+HyBRID SCD (1 & 2) : Hybrid SCDs are a combination of both SCD 1 and SCD 2.
+It may happen that in a table, some columns are important and we need to track changes for them i.e., capture the historical data for them whereas in some columns even if the data changes, we do not have to bother.
+For such tables, we implement Hybrid SCDs, where in some columns are Type 1 and some are Type 2.
+
 27.[D] What is BUS Schema?
  consists of suite of confirmed dimension and standardized definition if there is a fact tables.
  refer : https://www.careerride.com/Data-warehousing-BUS-schema.aspx
@@ -183,6 +187,153 @@ Question : simple example in ADSS. positions from SG, HK, BK ? how to represent?
 	Active transformation changes the number of rows number of rows that pass through the mapping. e.g. filter transformation 
 	In case of Passive transformation don’t change the number of rows. In passive transformations the number of input and output rows remain the same, only data is modified at row level.
 (4) Difference between Kimball and Inmon
+	For designing datawarehouse, there are two most common architectures named Kimball and Inmon been used. 
+Kimball approach: starts with (i) recognizing the business process and (ii)questions that Dataware house has to answer. These sets of information are being analyzed and then documented well. The Extract Transform Load (ETL) software brings all data from multiple data sources called data marts and then is loaded into a common area called staging. Then this is transformed into an OLAP cube. 
+Applications:
+(i) Setup and Built are quick. (ii) Generating report against multiple star schema is very successful.
+(iii) Database operations are very effective. (iv) Occupies less space in the database and management is easy.
+
+			        etl / DataMart  \
+OLTP Datasources -> etl - DataMart  -> Data Warehouse -> OLAP Cube -> Cube Browser -> Reporting layer 
+                    etl \ DataMart  /
+					
+					
+Inmon approach:
+starts with a corporate data model. This model recognizes key areas and also takes care of customers, products, and vendors. This model serves for the creation of a detailed logical model which is used for major operations. Details and models are then used to develop a physical model. This model is normalized and makes data redundancy less. 
+
+This is a complex model that is difficult to be used for business purposes for which data marts are created and each department is able to use it for their purposes.
+
+Applications:
+(i) The data warehouse is very flexible to changes. (ii) Business processes can be understood very easily.
+(iii) Reports can be handled across enterprises. (iv) ETL process is very less prone to errors.
+
+
+								 etl /DataMart  - OLAP Cube  -> Cube Browser    | 
+OLTP Datasources -> Data Warehouse 												| ->  Reporting Layer 
+								 etl \DataMart  - OLAP Cube -> Cube Browser     | 
+								 
+Comparison:
+Parameters			Kimball													Inmon
+Approach			It has a Bottom-Up Approach for implementation.			It has Top-Down Approach for implementation.
+Data Integration	It focuses on Individual business areas.				It focuses on Enterprise-wide areas.
+Building Time		It is efficient and takes less time.					It is complex and consumes a lot of time.
+Cost				It has iterative steps and is cost-effective.			Initial cost is huge and the development cost is low.
+Skills Required		It does not need such skills but a generic 				It needs specialized skills to make work.
+					team will do the job.
+Maintenance			Here maintenance is difficult.							Here maintenance is easy.
+Data Model			It prefers data to be in the De-normalized model.		It prefers data to be in a normalized model.
+Data Store Systems	In this, source systems are highly stable.				In this, source systems have a high rate of change.
+								 
+reference : https://www.geeksforgeeks.org/difference-between-kimball-and-inmon/
+
+(5) Agglomerative (bottom to Top) and divisive hierarchical (Top to Bottom)
+	Agglomerative hierarchical method : Each object creates its own clusters. The single Clusters are merged to make larger clusters and the process of merging continues until all the singular clusters are merged into one big cluster that consists of all the objects.
+	Divisive Hierarchical clustering method :  Works on the top-down approach. In this method all the objects are arranged within a big singular cluster and the large cluster is continuously divided into smaller clusters until each cluster has a single object.
+reference: https://benchpartner.com/q/differentiate-agglomerative-and-divisive-hierarchical-clustering
+
+(6) Cluster analysis in DW [D]
+	Cluster analysis is used to define the object without giving the class label. It analyzes all the data that is present in the data warehouse and compare the cluster with the cluster that is already running. 
+	It performs the task of assigning some set of objects into the groups are also known as clusters. It is used to perform the data mining job using the technique like statistical data analysis. It includes all the information and knowledge around many fields like machine learning, pattern recognition, image analysis and bio-informatics. Cluster analysis performs the iterative process of knowledge discovery and includes trials and failures. It is used with the pre-processing and other parameters as a result to achieve the properties that are desired to be used.
+
+reference : https://www.sawaal.com/data-warehousing-interview-questions/what-is-the-purpose-of-cluster-analysis-in-data-warehousing_7147#:~:text=Cluster%20analysis%20is%20used%20to,cluster%20that%20is%20already%20running.
+(7)  chameleon method used in data warehousing? [D]
+operates on the sparse graph having nodes: that represent the data items, and edges: representing the weights of the data items.
+This representation allows large dataset to be created and operated successfully. The method finds the clusters that are used in the dataset using two phase algorithm.
+
+☛ The first phase consists of the graph partitioning that allows the clustering of the data items into large number of sub-clusters.
+☛ Second phase uses an agglomerative hierarchical clustering algorithm to search for the clusters that are genuine and can be combined together with the sub-clusters that are produced.
+
+reference : http://interviewquestionsanswers.org/__Explain-me-why-is-chameleon-method-used-in-data-warehousing
+(8)What is active data warehousing?
+	An Active data warehouse aims to capture data continuously and deliver real time data. They provide a single integrated view of a customer across multiple business lines. It is associated with Business Intelligence Systems.
+
+(9)Virtual Data Warehousing ?
+ It is is an independent compute resource that can be leveraged at any time for SQL execution and DML (Data Manipulation Language) and then turned off when it isn’t needed. For decades, traditional on-premise data warehouses have tightly coupled data storage and compute, making it a challenge to scale either on-demand. However, today’s businesses need to store and analyze vast quantities of both structured and unstructured data from disparate services, necessitating a service that can respond to large data volumes and variable compute needs for applications such as visualization.
+ reference : https://www.snowflake.com/data-warehousing-glossary/virtual-warehouse/
+ 
+(10)Snapshot : Snapshot refers to a complete visualization of data at the time of extraction.
+(11)XMLA [D]
+XML for Analysis (XMLA) is a SOAP-based XML protocol, designed specifically for universal data access to any standard multidimensional data source that can be accessed over an HTTP connection.
+(12) ODS (Operational Data Store)
+An operational data store usually stores and processes data in real time. An ODS is connected to multiple data sources and pulls data into a central location.
+(13)What is a level of Granularity of a fact table?
+The granularity is the lowest level of information stored in the fact table. The depth of data level is known as granularity. In date dimension the level could be year, month, quarter, period, week, day of granularity.
+reference : https://www.careerride.com/Data-warehousing-Granularity-fact-table.aspx#:~:text=The%20granularity%20is%20the%20lowest,%2C%20week%2C%20day%20of%20granularity.
+
+(14)Junk Dimension ?[D]
+Junk Dimension also called as garbage dimension. A garbage dimension is a dimension that consists of low-cardinality columns such as codes, indicators, status, and flags. The garbage dimension is also referred to as a junk dimension. Attributes in a garbage dimension are not related to any hierarchy.
+(15)Normalization:
+Normalization is the process of reorganizing data in a database so that it meets two basic requirements: There is no redundancy of data, all data is stored in only one place. 
+It is also used to eliminate undesirable characteristics like Insertion, Update, and Deletion Anomalies. Normalization divides the larger table into smaller and links them using relationships.
+1NF :  it contains no repeating groups or remove repeating groups. 
+2NF : It should be in 1NF and all non-key attributes are fully functional dependent on the primary key.
+3NF : It should be in 2NF and no transition dependency exists. 
+      A transitive dependency refers to some non-prime attribute other than the candidate key that depends on another non-prime attribute that is dependent entirely on the candidate key.
+BCNF: BCNF (Boyce Codd Normal Form) is the advanced version of 3NF. A table is in BCNF if every functional dependency X->Y, X is the super key of the table. For BCNF, the table should be in 3NF, and for every FD.
+4NF	A relation will be in 4NF if it is in Boyce Codd's normal form and has no multi-valued dependency.
+5NF	A relation is in 5NF. If it is in 4NF and does not contain any join dependency, joining should be lossless.
+
+(16)Why do we override the execute method in Struts
+	As part of Struts FrameWork we can decvelop the Action Servlet,ActionForm servlets(here ActionServlet means which class extends the Action class is called ActionServlet and ActionFome means which calss extends the ActionForm calss is called the Action Form servlet)and other servlets classes.
+	reference : http://dba.fyicenter.com/Interview-Questions/Data-Warehousing/Why_do_we_override_the_execute_method_is_struts_.html
+(17) Conformed Dimension [D]
+Conformed is the same dimension used in different facts and has the same meaning ex: CustomerID. Role-Playing is the same dimension which used multiple times within the same fact but with different meanings ex: Dat
+
+(18)Explain the ETL cycle's 3-layer architecture
+	(i) Staging (ii) Integration (iii) Access Layesr
 	
-	references : https://www.geeksforgeeks.org/difference-between-kimball-and-inmon/
+(19)What is data purging?
+ Data purging is the process of deleting data from a database. When you purge data, it is permanently erased and cannot be restored. 
+(20) Can you define the five main testing phases of a DW project ?
+	ETL testing is performed in five stages:
+	Identifying data sources and requirements.
+	Data acquisition.
+	Implement business logic and Dimensional Modeling.
+	Build and populate data.
+	Build Reports.
+(21)[D]What do you mean by the Slice action ? How many slice-operated dimensions are used ?
+	Filtration process
+
+(22) What do you mean by threshold value validation
+	The Threshold Validation job is used to evaluate configured thresholds (threshold setup) and send out the appropriate alerts from the application.
+(22) 3 approache that could be followed for system integration Testing
+	TD :  ETL > Validate > DW > DM
+	BU :  ETL > Validate > DM > DW
+	Hybrid
+(23) A database schema 
+	 - A database schema is a blueprint or architecture of how our data will look. It doesn’t hold data itself, but instead describes the shape of the data and how it might relate to other tables or models. 
+     - is an abstract design that represents the storage of your data in a database. It describes both the organization of data and the relationships between tables in a given database. Developers plan a database schema in advance so they know what components are necessary and how they will connect to each other.
+	reference : https://www.educative.io/blog/what-are-database-schemas-examples
+(24)How do you prevent data loss
+	(i) data backup in regular interval (ii) Keep your computer clean and dust-free. (iii) Keep your anti-virus software up to date. (iv) Create an image backup BEFORE the first signs of hard drive failure.
+(25)Explain logshipping
+SQL Server Log shipping allows you to automatically send transaction log backups from a primary database on a primary server instance to one or more secondary databases on separate secondary server instances.
+(26)Describe the knowledge of cloud database
+	Db services on cloud platform
+	No Physical space required
+	It's highly secure and can be accessed simply using the webinterface
+(27)ODBC : 
+Open Database Connectivity (ODBC) is an open standard application programming interface (API) that allows application programmers to access any database.
+(28)DBA day to day activity
+	Monitoring user access and security
+	Monitoring Sever health
+	Monitoring DB performance and Installing 
+	Monitoring new bersion of the databse
+	prompt response to end users
+(29)Troubleshoot database problems
+	Ticketing system	
+(30)datawarehouse schema design [D] 
+     Schema is a logical description of the entire database. It includes the name and description of records of all record types including all associated data-items and aggregates. Much like a database, a data warehouse also requires to maintain a schema.
+
+(31) What is Database Entity? [D]
+	Database entity is a thing, person, place, unit, object or any item about which the data should be captured and stored in the form of properties, workflow and tables.
+
+	Think about the Entities
+	List out the entities
+	A simple star Model
 	
+Think about the relationships
+	Think about the missing relationship
+
+Think about the question you want to answer
+	what menu
