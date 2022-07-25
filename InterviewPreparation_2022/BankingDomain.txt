@@ -1,0 +1,15 @@
+What, as a team, we do
+--------------------
+
+In Citibank, we as a team work on the TradeCapture and LifeCycle of the derivative products.
+
+As part of the TradeCapture, we support the booking of positions on derivative products. So we provide UI screens to book positions/trades on major derivative products like Options, Exotic Options and different types of Swaps (Equity Swaps, Interest Rate Swaps, etc.).
+
+As part of LifeCycle, we support fixing (capturing the market value of the product based on its schedule). We do EQUITY, FLOATING and DIVIDEND fixings. We also do payment generation.
+
+[1]Derivative and Derivative products - https://www.investopedia.com/terms/f/financialinstrument.asp
+[2]Financial Instruments - https://www.investopedia.com/terms/f/financialinstrument.asp
+[3]Asset classes - https://www.investopedia.com/terms/a/assetclasses.asp
+[4]Risk Management - https://www.investopedia.com/terms/f/financialinstrument.asp
+[5]Risk Analysis - https://www.investopedia.com/terms/r/risk-analysis.asp
+[6]Risk Measures - https://www.investopedia.com/ask/answers/041415/what-are-some-common-measures-risk-used-risk-management.asp
