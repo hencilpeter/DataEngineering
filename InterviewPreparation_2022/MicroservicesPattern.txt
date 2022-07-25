@@ -1,0 +1,105 @@
+Microservices Patterns:
+======================
+source : https://microservices.io/patterns/index.html
+
+[1]  Application architecture patterns
+[2]  Decomposition
+[3]  Refactoring to microservices
+[4]  Data management
+[5]  Transactional messaging
+[5]  Testing
+[6]  Deployment patterns
+[7]  Cross cutting concerns
+[8]  Communication style
+D[9]  External API
+	9.1 API Gateway 
+		Context : Online store (which use microservices architecture pattern) implement product detail page develop multiple version of product detail page:
+                 e.g. 1. HTML/Java script based UI for desktop and mobile browsers
+                      2. Native android/iphone clients (clients interact with server via REST APIs)
+                      3. And, expose product details via REST API for the use by 3rd party applications. 					  
+		Problem  : How do the clients of a Microservices-based application access the individual services?
+		           (1. microservices typically provide fine-grained APIs. (ii) different clients need different data (iii) n/w performance is different for different type of clients (iv) no. of services instance and their locations changes dynamically i.e host and ports(v) partitioning into services can change over time and should be hidden from clients. 
+		Solution : Implement an API gateway that is the single entry point for all the clients. 
+		           It can handle request in two ways : (1)some requests simply proxied/routed to the appropriate service. (ii) It can handles other requests by fanning out to multiple services.  
+  
+		
+		View   Controller        
+		  \     /           \    (single      /REST:Product Info Service 
+		   Model             \   entry poing)/
+		                      \  API Gateway --REST:Recommendation Service     
+		View   Controller     /             \
+		  \     /            /               \AMQP : Review Service  
+		   Model            /      
+		                  (client             (protocol transaction)
+						  specific     
+                          API)						  
+		   
+		   
+	9.2 Backends for Frontends
+	    A variation of the above pattern is "Backends of Frontends" pattern. It defines a separate API gateway for each kind of client. 
+	      Web application         ---------> Web app API Gateway ---      REST: Catalog Service   
+		                                                            \ \
+		  Mobile app              ---------> Mobile API Gateway --/    REST: Recommendation Service 
+		                                                           \  
+		  3rd party applications  ---------> Public API Gateway -- /    gRPC: Review service   
+		  
+[10] Service discovery
+[11] Reliability
+D[12] Security
+     12.1 Access token 
+	     Problem: How to communicate the identity of the requestor to the services that handle the request?
+		 (Services often need to verify that a user is authorized to perform an operation)
+		 Solution : The API Gateway authenticates the request and passes an access token (e.g. JSON Web Token) that securely identifies the requestor in each request to the services. A service can include the access token in requests it makes to other services.
+		 
+[D][13] Observability
+	13.1 Log aggregation
+		Problem : How to understand the behavior of an application and troubleshoot problems?
+			(Any solution should have minimal runtime overhead)
+		Solution: Use a centralized logging service that aggregates logs from each service instance. The users can search and analyze the logs. They can configure alerts that are triggered when certain messages appear in the logs.
+	13.2 Application metrics
+		Problem : How to understand the behavior of an application and troubleshoot problems?
+			(Any solution should have minimal runtime overhead)
+		Solution:
+		Instrument a service to gather statistics about individual operations. Aggregate metrics in centralized metrics service, which provides reporting and alerting. There are two models for aggregating metrics:
+			push - the service pushes metrics to the metrics service
+			pull - the metrics services pulls metrics from the service
+	13.3 Audit logging
+		Problem : How to understand the behavior of users and the application and troubleshoot problems?
+			(It is useful to know what actions a user has recently performed: customer support, compliance, security, etc.)
+		Solution: Record user activity in a database.
+	13.4 Distributed tracing
+		Problem : How to understand the behavior of an application and troubleshoot problems?
+			(External monitoring only tells you the overall response time and number of invocations - no insight into the individual operations.
+			 Log entries for a request are scattered across numerous logs)
+		Solution:
+			Instrument services with code that:
+				Assigns each external request a unique external request id
+				Passes the external request id to all services that are involved in handling the request
+				Includes the external request id in all log messages
+				Records information (e.g. start time, end time) about the requests and operations performed when handling a external request in a centralized service
+	13.5 Exception tracking
+		Problem :How to understand the behavior of an application and troubleshoot problems?
+			(Exceptions must be de-duplicated, recorded, investigated by developers and the underlying issue resolved
+				Any solution should have minimal runtime overhead)
+		Solution: Report all exceptions to a centralized exception tracking service that aggregates and tracks exceptions and notifies developers.
+	13.6 Health check API
+		Problem : How to detect that a running service instance is unable to handle requests?
+			(An alert should be generated when a service instance fails
+			Requests should be routed to working service instances)
+		Solution:
+			A service has an health check API endpoint (e.g. HTTP /health) that returns the health of the service. The API endpoint handler performs various checks, such as
+			the status of the connections to the infrastructure services used by the service instance
+			the status of the host, e.g. disk space application specific logic
+			A health check client - a monitoring service, service registry or load balancer - periodically invokes the endpoint to check the health of the service instance.
+	13.7 Log deployments and changes
+		Problem : How to understand the behavior of an application and troubleshoot problems?
+			(It useful to see when deployments and other changes occur since issues usually occur immediately after a change)
+		Solution: Log every deployment and every change to the (production) environment.
+[14] UI patterns
+
+-----
+API Gateway: (i) redirecting incoming requests (rounting the request)  (ii) security (iii) load balancing (server side)   (check client side load balancing) 
+Eureka : naming service 
+configuration service: 
+
+
