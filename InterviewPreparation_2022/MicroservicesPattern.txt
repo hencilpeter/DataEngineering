@@ -6,6 +6,14 @@ source : https://microservices.io/patterns/index.html
 [2]  Decomposition
 [3]  Refactoring to microservices
 [4]  Data management
+	Database per Service
+	Shared database
+	Saga
+	API Composition
+	CQRS
+	Domain event
+	Event sourcing
+
 [5]  Transactional messaging
 [5]  Testing
 [6]  Deployment patterns
@@ -47,10 +55,10 @@ D[9]  External API
 	Problem : 
 			()
 	Solution: 
-[11] Reliability
-		Problem : 
+[D][11] Reliability
+		Problem : How to prevent a network or service failure from cascading to other services?
 			()
-	Solution: 
+	Solution: A service client should invoke a remote service via a proxy that functions in a similar fashion to an electrical circuit breaker. When the number of consecutive failures crosses a threshold, the circuit breaker trips, and for the duration of a timeout period all attempts to invoke the remote service will fail immediately. After the timeout expires the circuit breaker allows a limited number of test requests to pass through. If those requests succeed the circuit breaker resumes normal operation. Otherwise, if there is a failure the timeout period begins again.
 D[12] Security
      12.1 Access token 
 	     Problem: How to communicate the identity of the requestor to the services that handle the request?
