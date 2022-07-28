@@ -1,0 +1,50 @@
+
+---
+spark 
+https://cloudxlab.com/blog/spark-interview-questions/?utm_campaign=17600962042&utm_source=google&utm_medium=ppc&utm_content=&ad_group=141214320387&gclid=Cj0KCQjwxIOXBhCrARIsAL1QFCaZNZ0phmcZuT7MEHxvR8UW0l4ylObVQXtfqbEZ8fnIbf3cSpesiiMaAuMGEALw_wcB
+
+https://www.interviewbit.com/spark-interview-questions/
+
+https://intellipaat.com/blog/interview-question/apache-spark-interview-questions/
+
+python sample unit test 
+pytest/unittes
+data-driven Python applications - example 
+pandas, numpy
+Lambda Architecture for unified data pipelines for batch & real tim eprocessing 
+Online Analytical Processing - example 
+
+
+
+Python development and it’s libraries (like pandas, numpy, json, requests, pytest/unittest, pyarrow, openpyxl,xlsxwriter) including good understanding on architecture, design principles, coding standards, modularity & design pattern
+
+1.data analyst  
+https://www.coursera.org/articles/data-analyst-interview-questions-and-answers
+2. python, pandas, numpy, json, pytest/unittest, pyarrow, architecture, design principles, coding standard, modularity and design pattern 
+   pandas : https://www.javatpoint.com/python-pandas-interview-questions
+   numpy :https://www.interviewbit.com/numpy-interview-questions/
+           https://www.devopsschool.com/blog/top-50-numpy-interview-questions-and-answers/
+   json : https://career.guru99.com/top-19-json-interview-questions/
+[D]3. implement data-driven Python applications 
+4. EGL, Parquet,Avro,OLAP Cube 
+	https://oswinrh.medium.com/parquet-avro-or-orc-47b4802b4bcb
+	olap cube : https://www.guru99.com/online-analytical-processing.html
+5. lambda architecture 
+	https://cazton.com/consulting/enterprise/lambda-architecture
+	https://www.edureka.co/blog/introduction-to-lambda-architecture/
+6. RESTful API design and integrations
+7. Automation & continuous integration (Jenkins)
+8. OLAP – Online Analytical Processing (MDX Query)
+https://intellipaat.com/blog/tutorial/ssas-tutorial/introduction-to-mdx/
+9. java Threading and deaklock solution 
+   avoid deaklock : https://javarevisited.blogspot.com/2018/08/how-to-avoid-deadlock-in-java-threads.html#axzz7aLJ0ixKT
+   concurrency : https://www.baeldung.com/java-concurrency-interview-questions
+10. kafka 
+https://www.interviewbit.com/kafka-interview-questions/
+11. kubternetes and microservice patterns 
+https://www.simplilearn.com/tutorials/kubernetes-tutorial/kubernetes-interview-questions
+
+
+-------
+SonarQube - code quality 
+coding standard : https://www.zenesys.com/blog/python-coding-standards-best-practices
