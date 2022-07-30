@@ -20,11 +20,13 @@ Python development and it’s libraries (like pandas, numpy, json, requests, pyt
 
 1.data analyst  
 https://www.coursera.org/articles/data-analyst-interview-questions-and-answers
+ tasks : (i) identify, (ii) collect, (iii) clean, (iv) transform, (v) analyse, (vi) interpret 
 2. python, pandas, numpy, json, pytest/unittest, pyarrow, architecture, design principles, coding standard, modularity and design pattern 
    pandas : https://www.javatpoint.com/python-pandas-interview-questions
    numpy :https://www.interviewbit.com/numpy-interview-questions/
            https://www.devopsschool.com/blog/top-50-numpy-interview-questions-and-answers/
    json : https://career.guru99.com/top-19-json-interview-questions/
+   python interview questions : 
 [D]3. implement data-driven Python applications 
 4. EGL, Parquet,Avro,OLAP Cube 
 	https://oswinrh.medium.com/parquet-avro-or-orc-47b4802b4bcb
@@ -34,17 +36,30 @@ https://www.coursera.org/articles/data-analyst-interview-questions-and-answers
 	https://www.edureka.co/blog/introduction-to-lambda-architecture/
 6. RESTful API design and integrations
 7. Automation & continuous integration (Jenkins)
-8. OLAP – Online Analytical Processing (MDX Query)
+8. OLAP – Online Analytical Processing - [no need](MDX Query)(Multi – Dimensional eXpressions)
 https://intellipaat.com/blog/tutorial/ssas-tutorial/introduction-to-mdx/
 9. java Threading and deaklock solution 
-   avoid deaklock : https://javarevisited.blogspot.com/2018/08/how-to-avoid-deadlock-in-java-threads.html#axzz7aLJ0ixKT
+   avoid deaklock : https://www.javatpoint.com/how-to-avoid-deadlock-in-java
    concurrency : https://www.baeldung.com/java-concurrency-interview-questions
 10. kafka 
 https://www.interviewbit.com/kafka-interview-questions/
 11. kubternetes and microservice patterns 
 https://www.simplilearn.com/tutorials/kubernetes-tutorial/kubernetes-interview-questions
 
-
+12. Design pattern 
+    12.1 application 
+	    (a) creational : (i) singleton (ii) prototype (iii) factory (iv) abstract factory
+        (b) structural : (i) composite (n-ary relation ship emp-bos-mgr) (ii) bridge (keepign away abstration from its implementation) 
+		                 (iii) decorator (add. responsibility at runtime)  (iv) facade (unified interface for complex classes ) (v) adapter (or wrapper. changing one int to another )
+           				   
+        (c) behavioral : (i) command (encapsulate request as object)  (ii) chain of responsibility (chain the receiving objects and pass the request along the change until its handled it) 
+                   		 (iii) template  (defien skeletion of an algorithm and sequence of steps. sub class define the some method without changing the order ) 
+						 (vi) observer (used when one-to-many relationshipo between objects. so if one object is modifed, its depended will be notified automatically)
+	12.2 microservices 
+	    (i)    monolithic and microservice architecture 
+		(ii)   decomposition : decompose by 
+		(iii)  
+13. hencil's notes : datawarehousing 
 -------
 SonarQube - code quality 
 coding standard : https://www.zenesys.com/blog/python-coding-standards-best-practices
