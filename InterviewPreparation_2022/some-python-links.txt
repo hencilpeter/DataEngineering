@@ -56,9 +56,19 @@ https://www.simplilearn.com/tutorials/kubernetes-tutorial/kubernetes-interview-q
                    		 (iii) template  (defien skeletion of an algorithm and sequence of steps. sub class define the some method without changing the order ) 
 						 (vi) observer (used when one-to-many relationshipo between objects. so if one object is modifed, its depended will be notified automatically)
 	12.2 microservices 
-	    (i)    monolithic and microservice architecture 
-		(ii)   decomposition : decompose by 
-		(iii)  
+	    (a) monolithic and microservice architecture 
+		(b) decomposition : (i)decompose by business/sub-domain (ii)  self-contained service 
+		(c) refactoring : (i) strangler application (ii) anti-corruption layer 
+		(d) data management : (i)  database per service (ii)  shared database (iii) saga  (iv) API composition (v) Common Query Responsibility Segregation (CQRS) 
+		                     (vi) Domain event (v) event sorucing 
+		(e) transactional messaging : (i) transactional inbox (ii) transactional log trailing 
+		(f) external api : (i) API gateway  (ii) backends for frontends
+		(g) service discovery : (i) client side service discovery (iii) server side service discovery 
+		(h) reliability : (i) circuit breaker 
+		(i) Security: (i)access token 
+		(j) observability : (i) log aggregation (ii) applicatoin metrics  (iii) audit loging (iv) distributed tracing  (v) exception tracking 
+		                    (vi) health check api  (vii) log deployment and changes 
+		(k) UI patterns : (i) server-side page fragment composition (ii) client-side UI composition   					
 13. hencil's notes : datawarehousing 
 -------
 SonarQube - code quality 
