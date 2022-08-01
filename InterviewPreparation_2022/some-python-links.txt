@@ -70,6 +70,12 @@ https://www.simplilearn.com/tutorials/kubernetes-tutorial/kubernetes-interview-q
 		                    (vi) health check api  (vii) log deployment and changes 
 		(k) UI patterns : (i) server-side page fragment composition (ii) client-side UI composition   					
 13. hencil's notes : datawarehousing 
+14. Banking domain notes 
+15. data cube 
+	https://www.tutorialspoint.com/what-is-data-cube#:~:text=A%20data%20cube%20is%20generated,aggregated%20as%20per%20the%20dimensions.
+	https://www.tutorialspoint.com/dwh/dwh_olap.htm
+16. datawarehousing full tutorial 
+	https://www.educba.com/data-science/data-science-tutorials/data-warehouse-tutorial/
 -------
 SonarQube - code quality 
 coding standard : https://www.zenesys.com/blog/python-coding-standards-best-practices
