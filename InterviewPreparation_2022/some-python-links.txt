@@ -60,7 +60,7 @@ https://www.simplilearn.com/tutorials/kubernetes-tutorial/kubernetes-interview-q
 	    (a) monolithic and microservice architecture 
 		(b) decomposition : (i)decompose by business/sub-domain (ii)  self-contained service 
 		(c) refactoring : (i) strangler application (ii) anti-corruption layer 
-		(d) data management : (i)  database per service (ii)  shared database (iii) saga  (iv) API composition (v) Common Query Responsibility Segregation (CQRS) 
+		(d) data management : (i)  database per service (ii)  shared database (iii) saga  (iv) API composition (v) Command and Query Responsibility Segregation (CQRS) 
 		                     (vi) Domain event (v) event sorucing 
 		(e) transactional messaging : (i) transactional inbox (ii) transactional log trailing 
 		(f) external api : (i) API gateway  (ii) backends for frontends
