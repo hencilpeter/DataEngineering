@@ -56,6 +56,7 @@ https://www.simplilearn.com/tutorials/kubernetes-tutorial/kubernetes-interview-q
                    		 (iii) template  (defien skeletion of an algorithm and sequence of steps. sub class define the some method without changing the order ) 
 						 (vi) observer (used when one-to-many relationshipo between objects. so if one object is modifed, its depended will be notified automatically)
 	12.2 microservices 
+	https://docs.microsoft.com/en-us/azure/architecture/patterns/cqrs
 	    (a) monolithic and microservice architecture 
 		(b) decomposition : (i)decompose by business/sub-domain (ii)  self-contained service 
 		(c) refactoring : (i) strangler application (ii) anti-corruption layer 
