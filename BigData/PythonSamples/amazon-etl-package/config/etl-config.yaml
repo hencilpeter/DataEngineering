@@ -1,0 +1,6 @@
+ACCOUNT_INFORMATION_FILE: .\data\BIE-assessement-datasets\assessmentAccountInformation.txt
+SALES_REVENUE_FILE: .\data\BIE-assessement-datasets\assessmentSalesRevenue.txt
+POSTAL_INFORMATION_FILE: .\data\BIE-assessement-datasets\postal-information.csv
+REPORT_PATH: .\out
+DISTRIBUTION_REPORT_FILE_NAME: customer_distribution_report.csv
+TOP_CUSTOMER_REPORT_FILE_NAME: top_customer_report.csv
