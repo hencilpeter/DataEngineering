@@ -1,0 +1,20 @@
+IF OBJECT_ID( 'tempdb..#Employee_V2' ) IS NOT NULL DROP TABLE #Employee_V2; 
+
+
+CREATE TABLE #Employee_V2 (name varchar(10), dept varchar(10), salary int); 
+INSERT INTO #Employee_V2 VALUES ('Rick', 'Account', 3000); 
+INSERT INTO #Employee_V2 VALUES ('John', 'Account', 4000); 
+INSERT INTO #Employee_V2 VALUES ('Shane','Account', 3000); 
+
+INSERT INTO #Employee_V2 VALUES ('Peter', 'IT', 20000); 
+INSERT INTO #Employee_V2 VALUES ('Hencil','IT', 20000); 
+INSERT INTO #Employee_V2 VALUES ('Jackob','IT', 7000); 
+INSERT INTO #Employee_V2 VALUES ('Sid', 'Admin', 1000);
+
+
+
+select * from (select name, dept, salary, DENSE_RANK() OVER(partition by dept order by salary desc) rank from #Employee_V2 ) res where res.rank = 1
+
+select name, dept, salary, DENSE_RANK() OVER(partition by dept order by salary desc) rank from #Employee_V2
+select name, dept, salary, RANK() OVER(partition by dept order by salary desc) rank from #Employee_V2
+select name, dept, salary, DENSE_RANK() OVER(partition by dept order by salary desc) rank from #Employee_V2
