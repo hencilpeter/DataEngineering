@@ -1,0 +1,46 @@
+Proven design & architecture experience in a large complex organisation, including stakeholder management.
+Experience of developing and rolling out business applications / data projects including data migration.
+Strong stakeholder management ability in handling wide ranging and senior stakeholders (across function/segments/product areas)
+Documentation – Data Dictionary/Data Modelling/Data Lineage/Business Rules/DQ Rules/ Data Standards
+Good understanding on Data Quality Management and Framework (DQMF)
+Report Types - Gap Analysis/Problem Analysis/Completeness Dashboards
+Hands-on with Data Governance tools like Axon, Erwin
+Experience with ETL tools like Informatica, Alteryx
+Good experience with Business Intelligence tools and Data Warehousing
+
+
+=======================================
+1. Data Lake : https://www.holistics.io/blog/data-lake-vs-data-warehouse-vs-data-mart/amp/
+2. Data Warehouse
+   2.1 datatype change 2.2 fix duplicate records 2.3 data quality check (email, phone number, ) 2.3 transformation : number conversion and date formate change 2.4  populate aggregated values 
+3. Data Marts
+4. Business Intelligence
+5. Data Science
+6. bank data governance policies and standards
+7. standard industry tools for data management and data governance:
+	https://www.spiceworks.com/tech/big-data/articles/best-data-governance-tools/
+8. the bank’s requirements around data privacy & secrecy, data quality and records management and provide expertise on design considerations
+9. developing and maintaining data architecture and data quality management framework (DQMF) standards that adhere to industry best practices:
+	https://www.astera.com/type/blog/data-quality-management/
+	https://www.ibm.com/docs/en/iii/9.0.0?topic=recognize-data-quality-management-dqm
+10. familiar with regulations like GDPR, BCBS and the implications on data privacy and data architecture
+11. business process design in data insights and analytics
+
+Data Dictionary
+Data Modelling
+
+Data Lineage : https://www.imperva.com/learn/data-security/data-lineage/
+Business Rules
+DQ Rules
+Data Standards
+
+
+https://www.tutorialspoint.com/dwh/dwh_quick_guide.htm
+
+
+======================
+https://www.holistics.io/blog/data-lake-vs-data-warehouse-vs-data-mart/amp/
+https://www.spiceworks.com/tech/big-data/articles/best-data-governance-tools/
+https://www.astera.com/type/blog/data-quality-management/
+https://www.ibm.com/docs/en/iii/9.0.0?topic=recognize-data-quality-management-dqm
+https://www.imperva.com/learn/data-security/data-lineage/

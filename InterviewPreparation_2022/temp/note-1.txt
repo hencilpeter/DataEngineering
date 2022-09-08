@@ -1,0 +1,56 @@
+As part of our expansion and increasing demands for Big Data projects within Singtel Group, we are looking for a Big Data Director to:
+• Define and govern Big Data strategy, architecture and roadmap
+• Drive, lead and align new capabilities in the area of Big Data and Data Integration across Singtel Group
+• Lead and manage Big Data development and operations teams
+• Track and monitor vendor’s SLA performance
+• Plan and manage annual budget for both capital expenditures and operating expenses
+• Develop multi-year IT investment roadmaps that link to the Group IT strategy
+• Define standards and guidelines for development and operations
+• Build, maintain and improve strong relationship with business leaders, Group IT domains (departments) and IT service providers to deliver value via data
+• Represent Group IT at assigned project and / or program steering committees
+• Present and pitch at relevant senior leadership levels and /or executive steering committees
+• Drive Group IT and / or domain initiatives to the team
+• Promote a DevOps culture through building relationships with development & operations and driving enhancements to the end-to-end release process
+• Proactively advise the senior management team on the emerging technologies and digital trends that are most relevant to the company's goals and evolving needs
+• Hire, develop, evaluate, reward, and retain a highly-qualified team
+
+Responsibilities
+• Develop, define and govern Singtel Big Data and data management architecture, guidelines and roadmap with stakeholders
+• Build up new capabilities for Big Data to support business initiatives
+• Overall responsible for delivery and operations for Big Data functions
+• Manage multiple Big Data delivery / project teams comprise of internal IT professionals and several IT service providers to ensure that projects / enhancements are delivered within the agreed scope, budget and schedule
+• Lead the application support teams comprise of internal IT professionals and IT service providers in managing, monitoring and optimizing of Big Data Platforms to ensure these applications meet the agreed SLA agreed with business
+• Troubleshoot Big Data platforms and software, including performance-tunes of BI applications
+• Budgeting, tracking and forecasting capital & operational expenditure
+• Interface with product vendors to keep abreast of new technologies, pricing and customer applicability. Participate in vendor evaluations
+• Lead and establish development guidelines, standards and best practices
+• Implement the most appropriate and effective IT organizational design to support and engage with the business
+• Work with business stakeholders to develop and analyze big data needs
+• Manage and drive outsourced vendors to achieve defined delivery and operations objectives
+• Manage resource capacity and staffing
+• Provide functional leadership to assigned staff and deliver input to staff performance and development
+• Identify capability for the team and provide guidance, training, and problem-solving assistance to team members
+• Present and engage senior leadership levels and /or executive steering committees on Big Data initiatives, projects and operations
+• Drive Group IT initiatives to the team
+• Develop and execute an analytics program that will allow company business leaders to make data-based decisions
+
+The ideal candidate should possess
+• Bachelor's degree in Business Management, IT, Computer Science or equivalent.
+• At least 12 years of experience in the area of big data, data warehousing, BI & reporting and / or data management, including at least 8 years of experience in managing BI or big data development and operations team
+• Experience in managing and driving outsourced vendors to delivery and operations objectives
+• Hands-on experience in handling incident, problem, configuration, capacity and availability management
+• Successfully implemented large-scale data warehouse / data lake
+• Expert in building and optimizing ‘big data’ data pipelines
+• Experience in data management, data architecture and design
+• Strong technical knowledge of data integrations, ETL and data warehouse data modelling
+• Strong knowledge of BI reporting tools
+• Strong knowledge of SQL
+• Good understanding of Telco data models
+• Experience to do cost estimation and working with external vendors
+• Experience with DevOps tools and environment
+• Experience in building an enterprise level data analytics capability.
+• Experience in leading complex, major change initiatives; skills in change management
+• Customer-service oriented
+• Strong background in operational and capital finances, and IT budget development
+
+

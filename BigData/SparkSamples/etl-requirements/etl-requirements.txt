@@ -1,0 +1,66 @@
+ETL Requirements 
+
+
+Configurations 
+  FileConfiguration  (id, name, category, description, path, fileBody, prefix, suffix, delimiter, encoding, pipelineConfiguartion, customConfiguration )
+  PipelineConfiguration (id, name, description, parentId, childId, taskId,  )
+  TaskConfiguration (id, name, description, type, parameter)
+  PartitionConfiguration (id, name, description, type, )
+  CofigurationMnemonic  (id, name, description, detail )
+  
+in:
+  data:mem 		
+out:
+  data:mem
+---
+OR
+---
+in:
+  data:mem 		
+out:
+  data:mem
+   
+=============
+tasks :
+
+filecopy
+--------
+FileCopyFromUnixToUnix
+FileCopyFromUnixToHDFS 
+FileCopyFromHDFSToUnix
+FileCopyHDFSToHDFS
+
+transformation
+--------------
+TransformDate
+TransformNumber
+TransformNull
+
+partition 
+---------
+PartitionAdd
+ParitionRemove
+PartitionOverwrite 
+ 
+compression 
+-----------
+CompressionSnappy
+CompressionLZ4 
+
+fileformat 
+----------
+FileFormatORC
+FileFormatParquet 
+FileFormatAvro
+FileFormatText
+
+Read 
+----
+ReadFile 
+
+Write 
+-----
+WriteData 
+
+
+ 

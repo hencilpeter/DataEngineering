@@ -1,0 +1,81 @@
+
+===
+Bigdata strategies:
+	https://www.techtarget.com/searchdatamanagement/feature/How-to-build-an-enterprise-big-data-strategy-in-4-steps
+	https://www.hellersearch.com/blog/how-to-build-your-data-strategy-roadmap#.YwsFB3ZBxaQ
+	https://eliiza.com.au/what-is-data-strategy-more-than-a-technology-roadmap/
+Architecture : https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/big-data
+Roadmap : https://www.infotech.com/research/ss/build-a-data-architecture-roadmap
+
+SLA performance
+managing and driving outsourced vendors to delivery and operations objectives
+handling incident, problem, configuration, capacity and availability management
+implemented large-scale data warehouse / data lake
+data integrations, ETL and data warehouse data modelling
+BI reporting tools
+ 
+---
+ 
+Telco data models : 
+	https://experienceleague.adobe.com/docs/experience-platform/xdm/schema/industries/telecom.html?lang=en
+	https://microlearning.opensap.com/media/Data+Model+in+the+Telco+%26+Media+Accelerator+%E2%80%93+SAP+Commerce+Cloud+%E2%80%93+Accelerators/1_8odj9h6f
+   https://dwh-models.com/solutions/telco/
+   https://docs.oracle.com/cd/E11882_01/doc.112/e28440/intro_cdm.htm#CDMRF1481
+   http://brogoff.com/vertica/HTML/Master/4357.htm
+   https://www.ibm.com/downloads/cas/PVPOXENA
+   ROOM: https://core.ac.uk/download/pdf/36425787.pdf
+   
+
+--
+eg: customer 
+customer 
+  customer id, name, account balance, subscription 
+subscription
+ id, customer_id, product_id, name, billing frequency, cancellable , start date, end date, status(active, suspended, terminated)   
+product
+ id, name, specification 
+service
+  id, name, 
+  
+profile 
+  name, nric, dob, mobile, landline, address, company name
+  
+promotion 
+   id, name, description, start/end date, 
+ 
+----------------------
+ex: billing 
+ (1) billing (fact) 
+     id, custer_key, equipment_key, contract_key, bill_month, contract_detail, subscription_detail, in_call_mins, out_call_mins, charged_amount, discount, gst,  total   
+ (2) customer (d) 
+ (3) equipment (d) 
+ (4) contract (d) 
+ (5) subscription (d) 
+ (6) rate 
+ (7) call_history (d) 
+ (8) services 
+ (9) payment 
+****************************************************************
+standards and guidelines for development and operations
+steering committees presentation
+------------------
+Plan and manage annual budget for both capital expenditures and operating expenses
+
+
+****************************************************************
+best practises
+ 1. Focus on business needs, not technology
+ 2. Collecting lots of data is a good thing, not a problem
+ 3. Use data visualization to enable data discovery and analysis
+ 4. Enable automation where ever requied. XXX->  Iterate on structuring big data to match specific applications
+ 5. XXXConsider the cloud for deployments of big data systems
+ 6. Govern data for both compliance and usability
+
+***********************************************************
+data standards 
+  - Data standardization helps improve the quality of your data by transforming and standardizing it
+  (i)  data cleaning (ii) transformation  (iii) format and compression 
+  
+***********************************************************
+data guidelines 
+   (i) make sensitive data masked(ii) meet the required SLA (iii) provide right ACM (iv) 
