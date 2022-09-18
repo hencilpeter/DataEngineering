@@ -1,0 +1,44 @@
+1. Test SQL Server Agent is up 
+	SELECT dss.[status], dss.[status_desc]  FROM   sys.dm_server_services dss WHERE  dss.[servicename] LIKE N'SQL Server Agent (%';
+	
+	#use the below command to start te sql server agent if required 
+	sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
+	sudo systemctl restart mssql-server
+	
+2. switch to hadoop user 
+	>su - hadoop
+3. start all the hadoop services 
+    >start-all.sh	
+    >jps
+
+2. Start ZooKeeper 
+    > cd $KAFKA_HOME
+	> bin/zookeeper-server-start.sh config/zookeeper.properties
+3. Start Kafka Broker 
+  > bin/kafka-server-start.sh config/server.properties
+4. Start Kafka Connector 
+   > bin/connect-standalone.sh config/connect-standalone.properties config/custom_sqlserver_config.properties	
+5. List the topics 
+   > bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+   ()
+   bin/kafka-console-consumer.sh  --bootstrap-server localhost:9092 --topic sqlserver.dbo.customer --from-beginning
+   
+6. start the consumer 
+
+
+
+
+
+----
+
+1. create new table 
+
+2. enable cdc 
+EXEC sys.sp_cdc_enable_table @source_schema = N'dbo', @source_name = N'trade', @role_name = N'NULL', @supports_net_changes = 1 
+
+EXEC sys.sp_cdc_help_change_data_capture
+
+
+3. add config 
+
+https://github.com/Eugene-Mark/bigdata-file-viewer
