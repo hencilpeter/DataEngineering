@@ -1,0 +1,267 @@
+﻿https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver16
+
+sqlcmd -S localhost -U sa -P Test1234
+
+sudo systemctl status mssql-server
+sudo systemctl start mssql-server
+sudo systemctl stop mssql-server
+sudo systemctl restart mssql-server
+
+/opt/mssql/bin/mssql-conf setup
+
+---
+Java 
+====
+: https://www.tutorialspoint.com/apache_kafka/apache_kafka_quick_guide.htm
+JAVA_HOME: /home/hencil/Hencil_InstalledBins/jdk-18.0.2.1
+
+export JAVA_HOME=/home/hencil/Hencil_InstalledBins/jdk-18.0.2.1
+export PATH=$PATH:$JAVA_HOME/bin
+
+vi ~/.bashrc
+add the above two liens 
+source ~/.bashrc 
+
+Kafka
+===== 
+: https://www.tutorialspoint.com/apache_kafka/apache_kafka_quick_guide.htm
+
+https://hevodata.com/learn/kafka-cdc-sql-server/
+
+add below in bashrc:
+
+export KAFKA_HOME=/home/hencil/Hencil_InstalledBins/kafka_2.12-2.5.0
+export PATH=$PATH:$KAFKA_HOME/bin
+source ~/.bashrc 
+
+cd $KAFKA_HOME
+bin/zookeeper-server-start.sh config/zookeeper.properties
+bin/kafka-server-start.sh config/server.properties
+bin/connect-standalone.sh config/connect-standalone.properties config/custom_sqlserver_config.properties
+
+zookeeper port : 2181
+kafka broker port : 9092
+jps
+
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic topic_test
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic topic_test
+bin/kafka-console-consumer.sh  --bootstrap-server localhost:9092 --topic topic_test --from-beginning
+bin/kafka-console-consumer.sh  --bootstrap-server localhost:9092 --topic sqlserver.dbo.customer --from-beginning
+
+SQL Server
+==========
+create databse hencildb;
+--create table customer(id int primary key, name varchar(255))
+--insert into customer values (1, 'john')
+--insert into customer values (2, 'ben')
+--select * from customer;
+
+USE hencildb 
+EXEC sys.sp_cdc_enable_db 
+EXEC sys.sp_cdc_enable_table @source_schema = N'dbo', @source_name = N'customer', @role_name = N'Admin', @supports_net_changes = 1 
+
+
+
+Debezium 
+========
+
+https://hevodata.com/learn/kafka-cdc-sql-server/
+/home/hencil/Hencil_InstalledBins/debezium-connector-sqlserver
+
+https://www.anycodings.com/1questions/1442912/debezium-no-maximum-lsn-recorded-in-the-database-please-ensure-that-the-sql-server-agent-is-running
+
+http://127.0.1.1:8083/
+
+
+Connector setup 
+
+consumer 
+
+python and pycharm installation 
+
+custom consumer 
+
+custom connector config:
+-------------------------
+name=sqlserver-connector
+connector.class=io.debezium.connector.sqlserver.SqlServerConnector
+database.hostname=localhost
+database.port=1433
+database.user=sa
+database.password=Test1234
+database.dbname=hencildb
+database.server.name=sqlserver
+table.whitelist=dbo.customer
+database.history.kafka.bootstrap.servers=localhost:9092
+database.history.kafka.topic=topic_test
+
+
+USE testdb 
+GO 
+EXEC sys.sp_cdc_enable_db 
+GO
+
+
+USE TestDB 
+GO 
+EXEC sys.sp_cdc_enable_table @source_schema = N'dbo', @source_name = N'Posts', @role_name = N'Admin', @supports_net_changes = 1 
+GO
+
+
+bin/connect-standalone.sh config/connect-standalone.properties config/custom_sqlserver_config.properties
+
+
+
+--WORKING SQL 
+
+--create table customer(id int primary key, name varchar(255))
+--insert into customer values (1, 'john')
+--insert into customer values (2, 'ben')
+--select * from customer;
+
+--USE hencildb 
+--EXEC sys.sp_cdc_enable_db 
+--EXEC sys.sp_cdc_enable_table @source_schema = N'dbo', @source_name = N'customer', @role_name = N'Admin', @supports_net_changes = 1
+--EXEC sys.sp_cdc_enable_table @source_schema = N'dbo', @source_name = N'customer', @role_name = N'Admin', @supports_net_changes = 1 
+--EXEC sys.sp_cdc_enable_table @source_schema = N'dbo', @source_name = N'customer', @role_name = N'NULL'
+--EXEC sys.sp_cdc_disable_table @source_schema = N'dbo', @source_name = N'customer', @capture_instance = N'dbo_customer'
+--insert into dbo.customer values (9, 'ben9')
+
+--EXEC sp_changedbowner 'sa'
+--EXEC sys.sp_cdc_enable_db 
+
+exec sys.sp_cdc_change_job @job_type =N'capture', @pollinginterval=2
+exec sys.sp_cdc_stop_job @job_type =N'capture'
+exec sys.sp_cdc_start_job @job_type =N'capture'
+--SELECT name, is_cdc_enabled FROM sys.databases WHERE database_id = DB_ID();
+
+--CREATE LOGIN hencil WITH PASSWORD ='Test1234';
+
+
+--CREATE USER hencil FOR LOGIN hencil;
+--GRANT SELECT, ALTER,  INSERT, UPDATE, DELETE To hencil;
+
+
+
+
+
+Python Installation:
+======================
+https://linuxize.com/post/how-to-install-python-3-9-on-ubuntu-20-04/
+
+PyCharm Installation 
+====================
+https://linuxconfig.org/how-to-install-pycharm-on-ubuntu-20-04-linux-desktop
+
+
+Kafka-Python Installation 
+===============================
+https://zoomadmin.com/HowToInstall/UbuntuPackage/python-kafka
+sudo apt-get update -y
+sudo apt-get install -y python3-kafka
+
+intall python3-pip
+--------------------
+sudo apt install python3-pip
+
+
+
+
+
+Hadoop Installation 
+====================
+https://www.tutorialspoint.com/hadoop/hadoop_quick_guide.htm
+
+start-dfs.sh 
+export HADOOP_HOME=/home/hencil/Hencil_InstalledBins/hadoop3.3.4
+
+
+https://www.vultr.com/docs/install-and-configure-apache-hadoop-on-ubuntu-20-04/
+
+
+Python Consumer Sample
+=====================
+https://levelup.gitconnected.com/building-kafka-compatible-streaming-batch-workers-in-python-8762ef769974?gi=6c496facbf55
+
+
+
+
+ 
+
+
+----
+cdc enabled check sqls 
+
+https://stackoverflow.com/questions/61105240/debezium-no-maximum-lsn-recorded-in-the-database-please-ensure-that-the-sql-se
+
+SELECT s.name AS Schema_Name, tb.name AS Table_Name , tb.object_id, tb.type, tb.type_desc, tb.is_tracked_by_cdc FROM sys.tables tb INNER JOIN sys.schemas s on s.schema_id = tb.schema_id
+WHERE tb.is_tracked_by_cdc = 1
+
+----
+
+{
+    "name": "debezium-alwayson-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.sqlserver.SqlServerConnector",
+        "database.hostname": "<ip-address>",
+        "database.port": "1433",
+        "database.user": "<username>",
+        "database.password": "<password>",
+        "database.dbname": "<db_name>",
+        "database.server.name": "<server_name>",
+        "table.include.list": "dbo.<table_name>",
+        "database.history.kafka.bootstrap.servers": "kafka:9092",
+        "database.history.kafka.topic": "dbhistory.alwayson",
+        "tombstones.on.delete":"false",
+        "transforms":"Reroute",
+        "transforms.Reroute.type":"io.debezium.transforms.ByLogicalTableRouter",
+        "transforms.Reroute.topic.regex":"(.*)",
+        "transforms.Reroute.topic.replacement":"cdc_landing.$1",
+        "database.applicationIntent": "ReadOnly"
+    }
+}
+
+
+
+--
+spark 
+http://localhost:4040/executors/
+
+
+hadoop 
+https://phoenixnap.com/kb/install-hadoop-ubuntu
+------------
+
+  --EXEC sys.sp_cdc_enable_table   @source_schema=N'dbo', @source_name=N'customer',  @capture_instance=N'ZZZZ_customer', @role_name = NULL,   @supports_net_changes=1
+--EXEC sys.sp_cdc_help_change_data_capture
+
+
+Fix 1: 
+Issue : WARN No maximum LSN recorded in the database; please ensure that the SQL Server Agent is running
+Solution steps:
+--check sql server agent running 
+--SELECT dss.[status], dss.[status_desc]  FROM   sys.dm_server_services dss WHERE  dss.[servicename] LIKE N'SQL Server Agent (%';
+
+sudo /opt/mssql/bin/mssql-conf set sqlagent.enabled true
+sudo systemctl restart mssql-server
+
+
+
+
+---
+
+Tech Stack:
+1. Spark : version 3.3.0
+2. Java (JDK) : 11.0.16
+3. Hadoop 3.3.1
+
+Steps 
+
+1. start hadoop 
+   > su - hadoop
+   > start-all.sh 
+2. 
+
+
+
