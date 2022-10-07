@@ -43,7 +43,6 @@ EXEC sys.sp_cdc_help_change_data_capture
 
 
 
-https://docs.confluent.io/platform/current/connect/transforms/regexrouter.html#regexrouter
 
 
 

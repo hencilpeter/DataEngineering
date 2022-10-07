@@ -1,0 +1,22 @@
+default:
+  outfile_delimiter: COMMA
+  server_name: sqlserver
+  table_schema: dbo
+  bootstrap_servers: localhost:9092
+  hadoop_namenode: hdfs://localhost:9000
+  
+customer:
+  columns: name,id
+  outfile_delimiter: COMMA
+  hdfs_write_mode: append
+  hdfs_write_format: csv
+  hdfs_data_path: data
+  write_frequency_in_seconds: 5
+  
+trade:
+  columns: id,price,quantity,addnewcol
+  outfile_delimiter: COMMA
+  hdfs_write_mode: append
+  hdfs_write_format: csv
+  hdfs_data_path: data
+  write_frequency_in_seconds: 5

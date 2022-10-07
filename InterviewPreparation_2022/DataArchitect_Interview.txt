@@ -1,0 +1,64 @@
+Big-Data Architect 
+*******************
+
+BOS Responsibilities: 
+=====================
+ (1) Working with BAs and business stakeholders to understand the business and propose an agreeable solution 
+ (2) working on POC and giving demo on the finalized solution 
+ (3) working with EA team and get approval for the new solution (ensure it meets the org standard), tech stack usage  and licence 
+ (4) Working with the users and prepare the BPRC (TODO:expansion) document and SARC (TODO:?) 
+    (-) Logical Architecture  (-) Data Flow diagram  (-) source application, table, columns, data type (-) SLA (-) contact points (-) other info 
+ (5) ownership of provide Technical Specification Document, and Review. some tables: Conceptual and Logical Data Model (star schema )  
+ (6) Providing Hardware SPEC for edge and other data nodes (TODO: fill data ) 
+ (7) technical leadership and individual contributor 
+ (8) Engaging meetings with Infra team, AMU team, PMs, users, data providers        
+
+Mainly taking care of :
+  (1) EBP batch processing framework solution (source: txt, csv files, tech stack : scala/spark/python/orc/snappy/hdfs) 
+  (2) EBP Data streaming solution (debizium connector, kafka, scala/spark consumer) streaming data/backloaded(reconsiled) data info/logs 
+  (3) Data Visualization soltution 
+Involve in almost all the phases of SDLC:
+  (i) req gathering and design the solution (ii) POC and demo (iii) engagemet with EA team (iv) technical leadership (v) SIT/UAT coordination (vi) Infra and AMU teams communication (vii) DevOps and release formalities
+
+Citibank Responsibilities :
+===========================
+   (1) Equities derivative team which own the booking application (vanila option, exotic option IR swaps and other products). 
+   (2) originally, it was two-tier architecture (VC++ UI and sybase DB, and Tibco was used  as messaging layer)
+   (3) legacy system was changed to micro-service based solution using (java sprint boot, JPA , naming server: Eureka, API gateway, configuration server  and other individual services) 
+   (4) log aggregation framework : collecting logs of various micro-services into a single repo, analyse it and extract the info like trade-flow sequence, time taken, failure/success info, key data capturing, etc  and this will be used by Support/dev team to locate the issue quickly and react. 
+Responsibilities:
+   (1) being a senior team member, involved in new micro-service architecture and development 
+   (2) proposing new solutions like configuration service for all the 10s of microservices 
+   (3) Implemented few services like trade service, reporting-service, etc. 
+   (4) re-design STP-Distributor using microservice and kafka 
+   (5) solution for log aggregation framework
+   (6) conducting scrum meeting    
+==========================================================================================================
+Reason for change:
+ (i)  project completion and low visibility (after EBP, ocbc EBP team will take over) 
+ (ii) looking for better opportunity to communicate with bigger team and work on new challenging problems  
+ (iii) Also, new learning opportunities (e.g cloud ) 
+========================================== 
+ Microservice design pattern 
+(1) Decomposition by domain and business capability (2) self contained service by mergin saga and CQRS (4) refactoring to microservice (strangling)
+(5) Data management (db ser service, schema per service , table(s) per service) (6) Saga - (Orchestration based / chroreography based)
+(7) CRQS  (8) API Composer (9) Domain Event (10) Transaction log tailing (11) External API (using API gateway) (12) Service discovery (service registry : Eureka ) 
+(13) Circuit Breaker (14) UI solution : Server-side page fragment composition 
+
+1. Integration Design Pattern
+   https://www.enterpriseintegrationpatterns.com/ramblings/eip1_examples_updated.html
+	(i) Message Filter (ii) Event-driven Consumer
+3. communication patterns 
+   gRPC - Google Remote Procedure Call
+   Request/Response Messages
+   (ii) Simple RPC : client sends a single message to the server and receives a single message
+   (iii) Server-Streaming RPC : server sends back a sequence of responses when a request is received from the client. This sequence of response messages are sent inside the same HTTP stream initiated by the client. 
+   (iv) Client-Streaming RPC : the client sends multiple messages to the server and the server sends only one message in return.
+4. messaging pattern
+   (i) Priority Queue pattern   : Prioritize requests sent to services so that requests with a higher priority are received and processed more quickly than those with a lower priority. This pattern is useful in applications that offer different service level guarantees to individual clients.
+   (ii) Pipes and Filters pattern : Decompose a task that performs complex processing into a series of separate elements that can be reused.
+   (iii) Publisher-Subscriber pattern : Enable an application to announce events to multiple interested consumers asynchronously, without coupling the senders to the receivers.
+   (iv) Choreography pattern : Have each component of the system participate in the decision-making process about the workflow of a business transaction, instead of relying on a central point of control.
+5. AS-IS to TO-BE architecture 
+   (-) investigate and see what can be improved (-) document for compliance, quality, reasons (-) design the new process 
+	
