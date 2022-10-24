@@ -14,8 +14,8 @@ Microservice design patterns
 
 (1)Decomposition Design Patterns:
   (i) Decompose By Business Capability
-       Question : How to design loosely coupled microservices or to break alarge application into small loosely coupled services?
-       solution: define a microservice corresponding to a particular business capability. A businesscapability refers to the business activity targetted to generate value. 
+       Question : How to design loosely coupled microservices or to break a large application into small loosely coupled services?
+       solution: define a microservice corresponding to a particular business capability. A business capability refers to the business activity targetted to generate value. 
 	   e.g Order Management , Customer Management 
 	   Advantages:Stable Architecture, Cross-functional Teams, and Loosely Coupled Services
 	   Dis-advantages:Need good understand of Business, High Level Domain Model needed
@@ -28,7 +28,7 @@ Microservice design patterns
    (iii) Decompose By Strangler
 		  Question: how to design loosely coupled microservices or to break a large application into small loosely coupled services?
 		  Solution: define a microservice using strangler pattern. A strangler application has two types of services.
-				Existing Behavior : These services exhibits the behavior that previously resides inMonolith.
+				Existing Behavior : These services exhibits the behavior that previously resides in Monolith.
 				New Functionalities : These services implements new behavior.
 			e.g.  
 		  Advantages:Test Driven Development, Independent Teams
@@ -36,39 +36,39 @@ Microservice design patterns
 		  
 (2)Integration Design Patterns
    (i) API Gateway
-	 Question: When a large, complex application is to be built using microservicearchitecture, microservices can use different protocols. For example, some microservices are using REST and some are following AMQP. Now problem is how to allow clients to access eachmicroservice seemlessly without worrying about protocols and other intricacies.
+	 Question: When a large, complex application is to be built using microservice architecture, microservices can use different protocols. For example, some microservices are using REST and some are following AMQP(Advanced Message Queuing Protocol). Now problem is, how to allow clients to access each microservice seemlessly without worrying about protocols and other intricacies.
 	 Solution: define an API Gateway which will acts as single entry point for all type of clients.
 	   benefits : Simple Proxy, redirect multiple services, client specific API , security and authentication, protocol handling 
    e.g.  
    Advantages:
    Dis-advantages:
    (ii) Aggregator (or API Composer ?)
-   Question: When a large, complex application is to be built using microservicearchitecture, we often need to get the combined result of multiple microservices and show on the application.
-   Solution: define an Aggragator as a simple web module will act as a load balancer, which means itwill call different services as per requirements. Following is a diagram depicting a simplemicroservice web app with aggregator design. As seen in the following image, the "Aggregator"is responsible for calling different services one by one.
+   Question: When a large, complex application is to be built using microservice architecture, we often need to get the combined result of multiple microservices and show on the application.
+   Solution: define an Aggragator as a simple web module will act as a load balancer, which means it will call different services as per requirements. Following is a diagram depicting a simplemicroservice web app with aggregator design. As seen in the following image, the "Aggregator"is responsible for calling different services one by one.
    e.g.  
    Advantages:
    Dis-advantages:
    (iii) Proxy
-    Question: When a large, complex application is to be built using microservicearchitecture, we often need to prepare a unified interface which can do the common work like authentication and authorization before each service call.
-    Solution: Proxy microservice pattern is a variation of the aggregator model. In this model we will use proxymodule instead of the aggregation module.
+    Question: When a large, complex application is to be built using microservic earchitecture, we often need to prepare a unified interface which can do the common work like authentication and authorization before each service call.
+    Solution: Proxy microservice pattern is a variation of the aggregator model. In this model, we will use proxy module instead of the aggregation module.
      e.g.  
     Advantages:
     Dis-advantages:
 	(iv) Client Side UI Composition:
-		Question: how to develop a UI page/screen which can displays data frommultiple services.
-		Solution: Each UI team can develop a client side UI component such as Angular Component whichimplements or corresponds to a particular microservice. For multiple services, UI team is responsible to prepare a skeleton UI or page skeletons by building pages which are composed ofmultiple service specific UI components.
+		Question: how to develop a UI page/screen which can displays data from multiple services.
+		Solution: Each UI team can develop a client side UI component such as Angular Component which implements or corresponds to a particular microservice. For multiple services, UI team is responsible to prepare a skeleton UI or page skeletons by building pages which are composed of multiple service specific UI components.
 		e.g.  
 		Advantages:
 		Dis-advantages:
 	(v) Chain of Responsibilities
-		Question: if one service needs output of another service as dependency thenhow to handle such a case.
-		Solution: this type of compositionpattern will follow the chain structure. Here, we will not be using anything in between the clientand service layer. Instead, we will allow the client to communicate directly with the services andall the services will be chained up in a such a manner that the output of one service will be theinput of the next service.
+		Question: if one service needs output of another service as dependency then how to handle such a case.
+		Solution: this type of composition pattern will follow the chain structure. Here, we will not be using anything in between the client and service layer. Instead, we will allow the client to communicate directly with the services and all the services will be chained up in a such a manner that the output of one service will be the input of the next service.
 	   e.g.  
 	   Advantages:
-	   Dis-advantages: the client will be blocked until the entire process iscomplete. Thus, it is highly recommendable to keep the length of the chain as short as possible.
+	   Dis-advantages: the client will be blocked until the entire process is complete. Thus, it is highly recommendable to keep the length of the chain as short as possible.
 	(vi) Branch
-	Question: one service needs output of another service asdependency and client can call any service.
-	Solution: Branch microservice pattern is theextended version of aggregator pattern and chain pattern. In this design pattern, the client candirectly communicate with the service. Also, one service can communicate with more than oneservices at a time.
+	Question: one service needs output of another service as dependency and client can call any service.
+	Solution: Branch microservice pattern is the extended version of aggregator pattern and chain pattern. In this design pattern, the client candirectly communicate with the service. Also, one service can communicate with more than oneservices at a time.
 	   e.g.  
 	Advantages:
 	Dis-advantages:
@@ -76,8 +76,8 @@ Microservice design patterns
 (3)Database Design Patterns	
 	(i) Database per Service
 	Question: What should be the database structure/architecture in microservices based application.
-	Solution: We can keep each microservice data private to that microservice and this data will be accessibleonly via relevant microservice. The microservice will use its own database for transactions.
-	(a) Private tables per Service : Each microservice can utilize a set of tables and these tablesshould be accessible only via their relevant microservice.
+	Solution: We can keep each microservice data private to that microservice and this data will be accessible only via relevant microservice. The microservice will use its own database for transactions.
+	(a) Private tables per Service : Each microservice can utilize a set of tables and these tables should be accessible only via their relevant microservice.
 	(b) Schema per Service : A seperate schema can be defined per microservice.
 	(c) Database Server per Service :  Entire database server can be configured permicroservice.
 	   e.g.  
@@ -90,55 +90,55 @@ Microservice design patterns
 	Advantages:
 	Dis-advantages:
 	(iii) Command Query Responsibility Segregator
-	Question: if we've used a database per service design pattern then how to makequery which needs data from multiple services.
-	Solution: We can define a view database which is a read-only data to support the required query. Application will keep the view database up to date by subscribing to the events raised by theservices which owns the data.
+	Question: if we've used a database per service design pattern then how to make query which needs data from multiple services.
+	Solution: We can define a view database which is a read-only data to support the required query. Application will keep the view database up to date by subscribing to the events raised by the services which owns the data.
 	   e.g.  
 	Advantages:
 	Dis-advantages:
 	(iv) Saga
-	Question: if we've used a database per service design pattern then how toimplement a transaction which spans multiple services.
-	Solution: A saga is a sequence of local transactions. In this pattern, eachtransaction updates the database and triggers an event or publishes a message for nexttransaction in saga. In case, any local transaction fails, saga will trigger series of transactions toundo the changes done so far by the local transactions.
+	Question: if we've used a database per service design pattern then how to implement a transaction which spans multiple services.
+	Solution: A saga is a sequence of local transactions. In this pattern, each transaction updates the database and triggers an event or publishes a message for next transaction in saga. In case, any local transaction fails, saga will trigger series of transactions to undo the changes done so far by the local transactions.
 	   e.g.  
 	Advantages:
 	Dis-advantages:
 	(v) Aynchronous Messaging
-	Question: Microservices handle requests from clients and often need to communicatewith other microservices to fulfill the requests. So there is a requirement for inter-processcommunication protocol.
-	Solution: We can use Aynchronous Messaging Pattern for inter service communication as usingsynchronous communication will result in tight coupling of services and also requires both clientand service to be available during request.
+	Question: Microservices handle requests from clients and often need to communicate with other microservices to fulfill the requests. So there is a requirement for inter-process communication protocol.
+	Solution: We can use Aynchronous Messaging Pattern for inter service communication as using synchronous communication will result in tight coupling of services and also requires both clientand service to be available during request.
 	   e.g.  RabbitMQ and Apache Kafka are good examples of asynchronous messaging in microservices
 	Advantages:
 	Dis-advantages:
 	(vi) Event Sourcing 
-	Question: if we've used a database per service design pattern then how toimplement a transaction which spans multiple services.
-	Solution: We can use Event Sourcing Pattern for inter service communication. In this type ofcommunication, each service persists the events in event store for every action taken. Eachservice can subscribe to these events and correspondingly updates its transaction status.Consider a case of Order Service vs Customer Service. A customer service can subscribe toevents updated by order service and update its status accordingly.
+	Question: if we've used a database per service design pattern then how to implement a transaction which spans multiple services.
+	Solution: We can use Event Sourcing Pattern for inter service communication. In this type of communication, each service persists the events in event store for every action taken. Each service can subscribe to these events and correspondingly updates its transaction status. Consider a case of Order Service vs Customer Service. A customer service can subscribe to events updated by order service and update its status accordingly.
 	   e.g.  
 	Advantages:
 	Dis-advantages:
 	(vii) Log Aggregation
-	Question:  Each service instance write some information in its log file in a standardized format. These logs can be info, error, warning ordebug logs. How to analyze and troubleshoot application problems using these logs.
-	Solution: use a centralized logging service which aggregates the logs from each service. Usershould be able to search and analyze the logs provided by this logging service.
+	Question:  Each service instance write some information in its log file in a standardized format. These logs can be info, error, warning order bug logs. How to analyze and troubleshoot application problems using these logs.
+	Solution: use a centralized logging service which aggregates the logs from each service. User should be able to search and analyze the logs provided by this logging service.
 	   e.g.  
 	Advantages:
 	Dis-advantages:
 
 	(vii) Performance Metrics
-	Question: How to analyze and troubleshoot application problems. How to trackapplication performance and check bottlenecks. How to tracking mutiple services with minimumruntime overhead?
-	Solution: We can implement a instrumentation service which will be responsible to gather statistics aboutindividual operations and a central metrics service which should aggregates metrics andprovides the reporting and alerting. These services can collect the performance metrics in twoways −
+	Question: How to analyze and troubleshoot application problems. How to track application performance and check bottlenecks. How to tracking mutiple services with minimum runtime overhead?
+	Solution: We can implement a instrumentation service which will be responsible to gather statistics about individual operations and a central metrics service which should aggregates metrics and provides the reporting and alerting. These services can collect the performance metrics in twoways −
 	Push   − A services pushes the metrics to central metrics service.
-	Pull − The central metrics service pulls the metrics from the services.
+	Pull   − The central metrics service pulls the metrics from the services.
 	   e.g.  
 	Advantages:
 	Dis-advantages:
 	(viii) Distributed Tracing
-	Question: Requests often span multiple services. Using external monitoring, we cancheck overall response time and no. of invocations but how to get insight on individualtransactions/operations. A service may use databases, messaging queues, event sourcing etc.How to track scattered logs across multiple services?
+	Question: Requests often span multiple services. Using external monitoring, we can check overall response time and no. of invocations but how to get insight on individual transactions/operations. A service may use databases, messaging queues, event sourcing etc. How to track scattered logs across multiple services?
 	Solution: We can instrument a service which is designed to perform the following operations −
-	Corelation ID − Generate a unique external request id per external request and pass thisexternal id to each service involved in processing the request.
-	Log the Corelation ID − Each log message generated by processing service should havethis correlation id.
-	Record the Details − Records the start/end time and other relevant details in logs when arequest is processed by a service
+	Corelation ID − Generate a unique external request id per external request and pass this external id to each service involved in processing the request.
+	Log the Corelation ID − Each log message generated by processing service should have this correlation id.
+	Record the Details − Records the start/end time and other relevant details in logs when a request is processed by a service
 	   e.g.  
 	Advantages:
 	Dis-advantages:
 	(ix) Health Check
-	Question:  Loadbalancer/service registry/api gateway should notredirect any request to such failed service instances. So we need to detect if a running serviceinstance is able to take request(s) or not.
+	Question:  Loadbalancer/service registry/api gateway should not redirect any request to such failed service instances. So we need to detect if a running serviceinstance is able to take request(s) or not.
 	Solution: We can add a health check point to each service e.g. HTTP /health which returns the status ofservice health. This endpoint can perform the following tasks to check a service health − 
 	Connections Availablity − Status of database connections or connections to infrastructureservices used by current service.
     Host Status− Status of host like disk space, cpu usage, memory usage etc.
@@ -154,17 +154,16 @@ Microservice design patterns
 	Dis-advantages:
 	(xi) Service Discovery
 	(xii) Circuit Breaker
-	Question: how to prevent a service failure or network failure from cascading to other services. If oneservice is down then it should not be given further requests.
-	Solution: We can use circuit breaker pattern where a proxy service acts as a circuit breaker. Each serviceshould be invoked through proxy service. A proxy service maintains a timeout and failures count.In case of consecutive failures crosses the threshold failures count then proxy service trips thecircuit breaker and starts a timeout period. During this timeout period, all requests will failed.Once this timeout period is over, proxy service allows a given limited number of test requests topass to provider service. If requests succeed the proxy service resumes the operationsotherwise, it agains trips the circuit breaker and starts a timeout period and no requests will beentertained during that period.
+	Question: how to prevent a service failure or network failure from cascading to other services. If one service is down then it should not be given further requests.
+	Solution: We can use circuit breaker pattern where a proxy service acts as a circuit breaker. Each service should be invoked through proxy service. A proxy service maintains a timeout and failures count.In case of consecutive failures crosses the threshold failures count then proxy service trips the circuit breaker and starts a timeout period. During this timeout period, all requests will failed.Once this timeout period is over, proxy service allows a given limited number of test requests topass to provider service. If requests succeed the proxy service resumes the operationsotherwise, it agains trips the circuit breaker and starts a timeout period and no requests will beentertained during that period.
 	   e.g.  
 	Advantages:
 	Dis-advantages:
 	(xiii) Blue Green Deployment
-	Question: When a large, complex application is to be built using microservice
-architecture, the major problem is how to design loosely coupled microservices or to break alarge application into small loosely coupled services while keeping both the system in production.
+	Question: When a large, complex application is to be built using microservice architecture, the major problem is how to design loosely coupled microservices or to break a large application into small loosely coupled services while keeping both the system in production.
 	Solution:We can define deploy newly development microservices using blue-green deployment. In thismodel, user traffic is diverted from old application to new microservice application gradually. Onea microservice is available in production, the load balancer redirects the request targetted for oldapplication to the new microservice.
-	Blue Environment − The old application running in the production is called blueenvironment.
-	Green Environment − The new services deployed which replicates the given part of oldapplication is called the green environment.
+	Blue Environment − The old application running in the production is called blue environment.
+	Green Environment − The new services deployed which replicates the given part of old application is called the green environment.
 	   e.g.  
 	Advantages:
 	Dis-advantages:
