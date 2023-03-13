@@ -7,6 +7,7 @@
 	
 2. switch to hadoop user 
 	>su - hadoop
+(pw: Test1234) 
 3. start all the hadoop services 
     >start-all.sh	
     >jps
@@ -27,6 +28,8 @@
 
 
 
+hadoop fs -ls /data/customer/20220917/*
+hadoop fs -cat /data/customer/20220917/*
 
 
 ----

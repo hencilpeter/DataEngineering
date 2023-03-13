@@ -62,3 +62,23 @@ Reason for change:
 5. AS-IS to TO-BE architecture 
    (-) investigate and see what can be improved (-) document for compliance, quality, reasons (-) design the new process 
 	
+
+
+Docker and Kubernetes questions:
+================================
+https://www.edureka.co/blog/interview-questions/kubernetes-interview-questions/
+https://www.simplilearn.com/tutorials/kubernetes-tutorial/kubernetes-interview-questions
+
+(1) Steps to host a microservice in openshitft? 
+	(i)   docker file (i.e. take base image from someone. e.g In citi, jenkins will prepare the build. so it does soem copy command and get the base image )
+    (ii)  last statement is run -> define jar , env 
+    (iii) for diff env, different configuration and depoyment instruction will pass the value (SIT, UAT, PROD)
+	      
+    (iv) red-hat open shift is a layer on top of kubernetes (re-routing, load balancing, scaling, fault tollence) 
+    (v) auto scaling instruction (if CPU hits 80%, requst count ) ,  	
+(2) how to enable autoscaling when the throughput increasees? what parameter we consider? 
+(3) new version of service - deployment process 
+(4) why are we using openshift instead of kubernetes alone?
+     more for admin. easy to manage. app owner. very nice ui. 
+(5) Is it private cloud? 
+	Yes. 
