@@ -1,0 +1,14 @@
+common:
+  application_name: "kafka_consumer"
+  application_ticket_id_file_extension: ".live"
+  heartbeat_ folder-path: "C:\\Users\\User\\Documents\\GitHub\\DataEngineering\\python\\data_streaming\\heartbeat\\"
+  rip_request_folder-path: "C:\\Users\\User\\Documents\\GitHub\\DataEngineering\\python\\data_streaming\\heartbeat\\rip_request\\"
+  log_path: "C:\\Users\\User\\Documents\\GitHub\\DataEngineering\\python\\data_streaming\log\\"
+  thread_config_file_name: "C:\\Users\\User\\Documents\\GitHub\\DataEngineering\\python\\data_streaming\\src\\config\\thread_config.yaml"
+  tables_config-file_name: "C:\\Users\\User\\Documents\\GitHub\\DataEngineering\\python\\data_streaming\\src\\config\\tables_config.yaml"
+  running_mode: DEBUG
+kafka:
+  bootstrap_server: "10.103.18.208:9092"
+  topic_nane: CDCPOC
+  auto_offset_reset: latest
+  enable_auto_commit: True

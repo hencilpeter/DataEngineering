@@ -1,0 +1,9 @@
+common:
+  hfds_data_path: data
+kafka_consumer_test:
+  columns: trade_id,currency,value
+  outfile_delimiter:
+  hdfs_write_mode: append
+  ndfs_write_format: CsV
+  hdfs_data_path: /bos/data/kafka
+  partition_frequency: minute

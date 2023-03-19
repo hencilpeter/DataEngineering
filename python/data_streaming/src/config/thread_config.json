@@ -1,0 +1,20 @@
+{
+	"common": null,
+	"thread_life_notifier": {
+		"sleep_interval_in_seconds": 5
+	},
+	"garbage_collector": {
+		"sleep_interval_in_seconds": 5
+	},
+	"message_receiver": {
+		"sleep_interval_in_seconds": 5
+	},
+	"thread_manager": {
+		"sleep_interval_in_seconds": 5
+	},
+	"transaction_data_processor": {
+		"sleep_interval_in_seconds": 5,
+		"thread_count": 4
+	},
+	"table_list": ["tablel"," table2","table3","table4","table5"]
+}

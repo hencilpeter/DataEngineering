@@ -1,0 +1,28 @@
+{
+	"magic": "atMSG",
+	"type": "DT",
+	"headers": null,
+	"messageSchemaId": null,
+	"messageSchema": null,
+	"message": {
+		"data": {
+			"trade_id": 1,
+			"currency": "SGD",
+			"value": 10
+		},
+		"beforeData": null,
+		"headers": {
+			"kafka_consumer_test": {
+				"operation": "INSERT",
+				"changeSequence": "v \"20230315035132910000000000000000189\"",
+				"timestamp": "2023-03-15T03:51:32.913",
+				"streamPosition": "000642B80002E662001B:17:1",
+				"transactionId": "0000000000000000000000003347E573",
+				"changeMask": "07",
+				"columnMask": "07",
+				"transactionEventCounter": 1,
+				"transactionlastEvent": true
+			}
+		}
+	}
+}
